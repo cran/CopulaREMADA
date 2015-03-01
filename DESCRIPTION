@@ -1,0 +1,14 @@
+Package: CopulaREMADA
+Version: 0.5-1
+Date: 2015-03-01
+Title: Copula Mixed Effect Models for Bivariate Meta-Analysis of
+        Diagnostic Test Accuracy Studies
+Author: Aristidis K. Nikoloulopoulos <A.Nikoloulopoulos@uea.ac.uk> 
+Maintainer: Aristidis K. Nikoloulopoulos <A.Nikoloulopoulos@uea.ac.uk>
+Depends: R (>= 2.0.0), statmod
+Description: It has functions to implement the copula mixed model for meta-analysis of diagnostic test accuracy studies and produce SROC curves and summary operating points (a pair of average sensitivity and specificity) with a confidence region and a predictive region. See details for the methodology in Nikoloulopoulos, A.K. (2015) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, ArXiv e-prints.    
+License: GPL (>= 2)
+Packaged: 2015-02-22 18:01:47 UTC; xry09vgu
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2015-02-23 00:14:28
