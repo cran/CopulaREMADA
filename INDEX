@@ -1,13 +1,26 @@
 CopulaREMADA.beta CopulaREMADA with beta margins
 CopulaREMADA.norm CopulaREMADA with normal margins
+VineCopulaREMADA.beta VineCopulaREMADA with beta margins
+VineCopulaREMADA.norm VineCopulaREMADA with normal margins
+tVineCopulaREMADA.beta truncated VineCopulaREMADA with beta margins
+tVineCopulaREMADA.norm truncated VineCopulaREMADA with normal margins
 countermonotonicCopulaREMADA.beta countermonotonic CopulaREMADA with beta margins
 countermonotonicCopulaREMADA.norm countermonotonic CopulaREMADA with normal margins
 rCopulaREMADA.norm simulated CopulaREMADA with normal margins
 rCopulaREMADA.beta simulated CopulaREMADA with beta margins
+rVineCopulaREMADA.norm simulated VineCopulaREMADA with normal margins
+rVineCopulaREMADA.beta simulated VineCopulaREMADA with beta margins
 SROC.beta summary receiver operating characteristic curves for CopulaREMADA with beta margins
 SROC.norm summary receiver operating characteristic curves for CopulaREMADA with normal margins
 SROC summary receiver operating characteristic curves for countermonotonic CopulaREMADA with normal and beta margins
 countermonotonicity.vuong Vuong's test for countermonotonic CopulaREMADAs
-vuong.norm Vuong's test for countermonotonic CopulaREMADA with normal margins
-vuong.beta Vuong's test for countermonotonic CopulaREMADA with beta margins
+vuong.norm Vuong's test for CopulaREMADA with normal margins
+vuong.beta Vuong's test for CopulaREMADA with beta margins
+vine.vuong.norm Vuong's test for VineCopulaREMADA with normal margins
+vine.vuong.beta Vuong's test for VineCopulaREMADA with beta margins
+tvine.vuong.norm Vuong's test for truncated VineCopulaREMADA with normal margins
+tvine.vuong.beta Vuong's test for truncated VineCopulaREMADA with beta margins
+
+
+
 

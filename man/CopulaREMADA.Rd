@@ -7,7 +7,7 @@
 \alias{countermonotonicCopulaREMADA.norm}
 \alias{countermonotonicCopulaREMADA.beta}
 \title{
-Maximum likelhood estimation  for copula mixed models for diagnostic test accuaracy studies
+Maximum likelhood estimation  for copula mixed models for diagnostic test accurracy studies
 }
 \description{
 For  copula mixed models for diagnostic test accuracy studies numerical evaluation of the MLE is easily done with the following steps:
@@ -41,7 +41,7 @@ countermonotonicCopulaREMADA.beta(TP,FN,FP,TN,gl,mgrid)
 \item{TN}{the number of true negatives}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
-a list containing two matrices with the rows of the output matrix X are copies of the vector \code{gl$nodes}; columns of the output matrix Y are copies of the vector \code{gl$nodes}. For more details see also \code{\link{meshgrid}}}
+a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}. For more details see also \code{\link{meshgrid}}}
 \item{qcond}{function for conditional copula cdf}
 \item{tau2par}{function for maping Kendall's tau to copula parameter}
 }
@@ -57,13 +57,12 @@ a list containing two matrices with the rows of the output matrix X are copies o
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K. (2015) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}. 
+Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}. 
 }
 \seealso{
 \code{\link{rCopulaREMADA}}
 }
 \examples{
-library(statmod)
 nq=15
 gl=gauss.quad.prob(nq,"uniform")
 mgrid<- meshgrid(gl$n,gl$n)

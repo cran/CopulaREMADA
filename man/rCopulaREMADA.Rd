@@ -41,7 +41,7 @@ rCopulaREMADA.beta(N,p,g,tau,rcop,tau2par)
 \item{TN}{the number of true negatives}
 }
 \references{
-Nikoloulopoulos, A.K. (2015) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}.
+Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}.
 }
 \seealso{
 \code{\link{CopulaREMADA}} \code{\link{rcop}}

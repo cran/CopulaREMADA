@@ -32,11 +32,11 @@ a list containing two matrices with the rows of the output matrix X are copies o
 }
 \value{A list containing the following components:
 
-\item{nu}{the test statistic}
+\item{z}{the test statistic}
 \item{p-value}{the \eqn{p}-value}
 }
 \references{
-Nikoloulopoulos, A.K. (2015) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}. 
+Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}. 
 
 Vuong Q.H. (1989) Likelihood ratio tests for model selection and non-nested hypotheses. \emph{Econometrica} 57(2), 307--333.
 }
@@ -44,7 +44,6 @@ Vuong Q.H. (1989) Likelihood ratio tests for model selection and non-nested hypo
 \code{\link{CopulaREMADA}}
 }
 \examples{
-library(statmod)
 nq=15
 gl=gauss.quad.prob(nq,"uniform")
 mgrid<- meshgrid(gl$n,gl$n)

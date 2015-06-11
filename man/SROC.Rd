@@ -31,7 +31,7 @@ SROC(param.beta,param.normal,TP,FN,FP,TN)
 \value{Summary receiver operating characteristic   curves
 }
 \references{
-Nikoloulopoulos, A.K. (2015) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}. 
+Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}. 
 }
 
 \seealso{
@@ -39,7 +39,6 @@ Nikoloulopoulos, A.K. (2015) A mixed effect model for bivariate meta-analysis of
 \code{\link{rCopulaREMADA}}
 }
 \examples{
-library(statmod)
 nq=15
 gl=gauss.quad.prob(nq,"uniform")
 mgrid<- meshgrid(gl$n,gl$n)

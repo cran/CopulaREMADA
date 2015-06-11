@@ -1,17 +1,3 @@
-#library(pracma)
-meshgrid<-function (x, y = x) 
-{
-  if (!is.numeric(x) || !is.numeric(y)) 
-    stop("Arguments 'x' and 'y' must be numeric vectors.")
-  x <- c(x)
-  y <- c(y)
-  n <- length(x)
-  m <- length(y)
-  X <- matrix(rep(x, each = m), nrow = m, ncol = n)
-  Y <- matrix(rep(y, times = n), nrow = m, ncol = n)
-  return(list(X = X, Y = Y))
-}
-
 binomprod=function(x1,x2,TP,FN,FP,TN)
 { n1=TP+FN
   n2=TN+FP
@@ -29,9 +15,9 @@ loglik.beta<-function(param,TP,FN,FP,TN,gl,mgrid,qcond,tau2par)
   if(p[2]<= 0 | p[2]>=1) return(1.e10)
   if(g[2]<= 0 | g[2]>=1) return(1.e10)
   if(tau< -0.95 | tau>=0.95) return(1.e10)
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par(tau)
-  u2=qcond(mgrid$Y,mgrid$X,th)
+  u2=qcond(mgrid$y,mgrid$x,th)
   a=p/g-p
   b=(1-p)*(1-g)/g
   x1=qbeta(u1,a[1],b[1])
@@ -69,9 +55,9 @@ countermon.loglik.beta<-function(param,TP,FN,FP,TN,gl,mgrid)
   if(g[1]<= 0 | g[1]>=1) return(1.e10)
   if(p[2]<= 0 | p[2]>=1) return(1.e10)
   if(g[2]<= 0 | g[2]>=1) return(1.e10)
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par.bvn(tau)
-  u2=qcondbvn(mgrid$Y,mgrid$X,th)
+  u2=qcondbvn(mgrid$y,mgrid$x,th)
   a=p/g-p
   b=(1-p)*(1-g)/g
   x1=qbeta(u1,a[1],b[1])
@@ -109,9 +95,9 @@ loglik.norm<-function(param,TP,FN,FP,TN,gl,mgrid,qcond,tau2par)
   if(si[1]<=0 | si[2]<=0) return(1.e10)
   if(tau< -0.95 | tau>=0.95) return(1.e10)
   mu=log(p/(1-p))
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par(tau)
-  u2=qcond(mgrid$Y,mgrid$X,th)
+  u2=qcond(mgrid$y,mgrid$x,th)
   x1=qnorm(u1,mu[1],si[1])
   x2=qnorm(u2,mu[2],si[2])
   t1=exp(x1)
@@ -156,9 +142,9 @@ countermon.loglik.norm<-function(param,TP,FN,FP,TN,gl,mgrid)
   if(p[2]<=0 | p[2]>=1) return(1.e10)
   if(si[1]<=0 | si[2]<=0) return(1.e10)
   mu=log(p/(1-p))
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par.bvn(tau)
-  u2=qcondbvn(mgrid$Y,mgrid$X,th)
+  u2=qcondbvn(mgrid$y,mgrid$x,th)
   x1=qnorm(u1,mu[1],si[1])
   x2=qnorm(u2,mu[2],si[2])
   t1=exp(x1)

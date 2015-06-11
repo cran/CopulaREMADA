@@ -3,9 +3,9 @@ jpmf.norm<-function(param,TP,FN,FP,TN,gl,mgrid,qcond,tau2par)
   si=param[3:4]
   tau=param[5]
   mu=log(p/(1-p))
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par(tau)
-  u2=qcond(mgrid$Y,mgrid$X,th)
+  u2=qcond(mgrid$y,mgrid$x,th)
   x1=qnorm(u1,mu[1],si[1])
   x2=qnorm(u2,mu[2],si[2])
   t1=exp(x1)
@@ -26,9 +26,9 @@ jpmf.beta<-function(param,TP,FN,FP,TN,gl,mgrid,qcond,tau2par)
 { p=param[1:2]
   g=param[3:4]
   tau=param[5]
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par(tau)
-  u2=qcond(mgrid$Y,mgrid$X,th)
+  u2=qcond(mgrid$y,mgrid$x,th)
   a=p/g-p
   b=(1-p)*(1-g)/g
   x1=qbeta(u1,a[1],b[1])
@@ -47,11 +47,11 @@ vuong.norm=function(qcond,tau2par,param1,param2,TP,FN,FP,TN,gl,mgrid)
   n=length(prob1)
   prob2=jpmf.norm(param2,TP,FN,FP,TN,gl,mgrid,qcond,tau2par)
   m=log(prob2/prob1)
-  nu=sqrt(n)*mean(m)/sd(m)
-  pvalue<-2*pnorm(-abs(nu))
-  result<-data.frame(round(nu,digits=3),
+  z=sqrt(n)*mean(m)/sd(m)
+  pvalue<-2*pnorm(-abs(z))
+  result<-data.frame(round(z,digits=3),
     round(pvalue,digits=3))
-  names(result)<-c("nu","p.value")
+  names(result)<-c("z","p.value")
   return(result)
 }
 
@@ -60,11 +60,11 @@ vuong.beta=function(qcond,tau2par,param1,param2,TP,FN,FP,TN,gl,mgrid)
   n=length(prob1)
   prob2=jpmf.beta(param2,TP,FN,FP,TN,gl,mgrid,qcond,tau2par)
   m=log(prob2/prob1)
-  nu=sqrt(n)*mean(m)/sd(m)
-  pvalue<-2*pnorm(-abs(nu))
-  result<-data.frame(round(nu,digits=3),
+  z=sqrt(n)*mean(m)/sd(m)
+  pvalue<-2*pnorm(-abs(z))
+  result<-data.frame(round(z,digits=3),
                      round(pvalue,digits=3))
-  names(result)<-c("nu","p.value")
+  names(result)<-c("z","p.value")
   return(result)
 }
 
@@ -80,9 +80,9 @@ countermon.jpmf.beta<-function(param,TP,FN,FP,TN,gl,mgrid)
 { p=param[1:2]
   g=param[3:4]
   tau=-0.95
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par.bvn(tau)
-  u2=qcondbvn(mgrid$Y,mgrid$X,th)
+  u2=qcondbvn(mgrid$y,mgrid$x,th)
   a=p/g-p
   b=(1-p)*(1-g)/g
   x1=qbeta(u1,a[1],b[1])
@@ -102,9 +102,9 @@ countermon.jpmf.norm<-function(param,TP,FN,FP,TN,gl,mgrid)
   si=param[3:4]
   tau=-0.95
   mu=log(p/(1-p))
-  u1=mgrid$X
+  u1=mgrid$x
   th=tau2par.bvn(tau)
-  u2=qcondbvn(mgrid$Y,mgrid$X,th)
+  u2=qcondbvn(mgrid$y,mgrid$x,th)
   x1=qnorm(u1,mu[1],si[1])
   x2=qnorm(u2,mu[2],si[2])
   t1=exp(x1)
@@ -125,11 +125,11 @@ countermonotonicity.vuong=function(param1,param2,TP,FN,FP,TN,gl,mgrid)
   n=length(prob1)
   prob2=countermon.jpmf.beta(param2,TP,FN,FP,TN,gl,mgrid)
   m=log(prob2/prob1)
-  nu=(sqrt(n)*mean(m))/sd(m)
-  pvalue<-2*pnorm(-abs(nu))
-  result<-data.frame(round(nu,digits=3),
+  z=(sqrt(n)*mean(m))/sd(m)
+  pvalue<-2*pnorm(-abs(z))
+  result<-data.frame(round(z,digits=3),
     round(pvalue,digits=3))
-  names(result)<-c("nu","p.value")
+  names(result)<-c("z","p.value")
   return(result)
 }
 
