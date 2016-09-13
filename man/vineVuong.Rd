@@ -62,7 +62,7 @@ a list containing three-dimensional arrays. For more details see \code{\link{mes
 }
 \references{
 Nikoloulopoulos, A.K. (2015b) A vine copula mixed effect model  
-for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{ArXiv e-prints}. 
+for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{Statistical Methods in Medical Research}, DOI:10.1177/0962280215596769. 
 
 Vuong Q.H. (1989) Likelihood ratio tests for model selection and non-nested hypotheses. \emph{Econometrica} 57(2), 307--333.
 }

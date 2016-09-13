@@ -49,7 +49,7 @@ rVineCopulaREMADA.norm(N,p,si,taus,qcondcop12,qcondcop13,qcondcop23,
 }
 \references{
 Nikoloulopoulos, A.K. (2015b) A vine copula mixed effect model  
-for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{ArXiv e-prints}. 
+for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{Statistical Methods in Medical Research}, DOI:10.1177/0962280215596769. 
 }
 \seealso{
 \code{\link{rCopulaREMADA}} \code{\link{rcop}}  \code{\link{cvinesim}}

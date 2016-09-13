@@ -6,6 +6,8 @@ tVineCopulaREMADA.beta truncated VineCopulaREMADA with beta margins
 tVineCopulaREMADA.norm truncated VineCopulaREMADA with normal margins
 countermonotonicCopulaREMADA.beta countermonotonic CopulaREMADA with beta margins
 countermonotonicCopulaREMADA.norm countermonotonic CopulaREMADA with normal margins
+hybridCopulaREMADA.beta hybridCopulaREMADA with beta margins
+hybridCopulaREMADA.norm hybridCopulaREMADA with normal margins
 rCopulaREMADA.norm simulated CopulaREMADA with normal margins
 rCopulaREMADA.beta simulated CopulaREMADA with beta margins
 rVineCopulaREMADA.norm simulated VineCopulaREMADA with normal margins

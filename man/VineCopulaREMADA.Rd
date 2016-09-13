@@ -11,23 +11,12 @@
 Maximum likelhood estimation  for (truncated) vine copula mixed models for diagnostic test accurracy studies accounting for disease prevalence
 }
 \description{
-For  vine copula mixed models for diagnostic test accuracy studies accounting for disease prevalence numerical evaluation of the MLE is easily done with the following steps:
-
-
-1. Calculate Gauss-Legendre  quadrature points 
-{gl$nodes} and weights {gl$weights}.
-
-2. Convert from independent uniform quadrature points  to dependent uniform quadrature points  that have a vine copula distribution.
-The inverse of the conditional distribution \code{qcondcop} corresponding to the copula 'cop' is used  to achieve this.
-
-3. Numerically evaluate the joint probability mass function with the trivariate integral
-in a triple sum. 
-
-
-With Gauss-Legendre quadrature, the same nodes and weights
-are used for different functions;
-this helps in yielding smooth numerical derivatives for numerical optimization via quasi-Newton.
-Our comparisons show that \eqn{n_q=15} is adequate with good precision to at least at four decimal places. 
+The estimated parameters can be obtained by 
+using a quasi-Newton method applied to the logarithm of the joint likelihood.  
+This numerical  method requires only the objective
+function, i.e.,  the logarithm of the joint likelihood, while the gradients
+are computed numerically and the Hessian matrix of the second
+order derivatives is updated in each iteration. The standard errors (SE) of the ML estimates can be also obtained via the gradients and the Hessian computed numerically during the maximization process.
 }
 \usage{
 VineCopulaREMADA.norm(TP,FN,FP,TN,perm,gl,mgrid,
@@ -80,7 +69,7 @@ For more details see  \code{\link{nlm}}
 }
 \references{
 Nikoloulopoulos, A.K. (2015b) A vine copula mixed effect model  
-for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{ArXiv e-prints}. 
+for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{Statistical Methods in Medical Research}, DOI:10.1177/0962280215596769. 
 }
 \seealso{
 \code{\link{rVineCopulaREMADA}}

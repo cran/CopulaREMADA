@@ -36,7 +36,7 @@ a list containing two matrices with the rows of the output matrix X are copies o
 \item{p-value}{the \eqn{p}-value}
 }
 \references{
-Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{ArXiv e-prints}. 
+Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{Statistics in Medicine}, 34:3842--3865. 
 
 Vuong Q.H. (1989) Likelihood ratio tests for model selection and non-nested hypotheses. \emph{Econometrica} 57(2), 307--333.
 }
