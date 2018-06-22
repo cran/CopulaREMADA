@@ -15,7 +15,7 @@
 \item{TN}{the number of true negatives}
 }}
 \references{
-Ye Y, Xie H, Zhao X, Zhang S. (2012) The oral glucose tolerance test for the diagnosis of diabetes mellitus in patients during acute coronary syndrome hospitaliza- tion: a meta-analysis of diagnostic test accuracy. \emph{Car- diovascular Diabetology}, 11(5):155.
+Ye, Y., Xie, H., Zhao, X., Zhang, S. (2012) The oral glucose tolerance test for the diagnosis of diabetes mellitus in patients during acute coronary syndrome hospitalization: a meta-analysis of diagnostic test accuracy. \emph{Cardiovascular Diabetology}, \bold{11}(5):155.
 
 }
 

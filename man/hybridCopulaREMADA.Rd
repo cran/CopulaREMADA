@@ -47,11 +47,11 @@ hybridCopulaREMADA.beta(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
 a list containing three-dimensional arrays. For more details see \code{\link{meshgrid}}}
 \item{mgrid2}{
 a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}. For more details see also \code{\link{meshgrid}}}
-\item{qcondcop12}{function for conditional copula cdf at the (1,2) bivariate margin of the vine}
-\item{qcondcop13}{function for conditional copula cdf at the (1,3) bivariate margin of the vine}
+\item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin of the vine}
+\item{qcondcop13}{function for the inverse of conditional copula cdf at the (1,3) bivariate margin of the vine}
 \item{tau2par12}{function for maping Kendall's tau at the (1,2) bivariate margin of the vine to copula parameter}
 \item{tau2par13}{function for maping Kendall's tau at the (1,3) bivariate margin of the vine to copula parameter}
-\item{qcond}{function for the bivariate conditional copula cdf }
+\item{qcond}{function for the inverse of conditional copula cdf }
 \item{tau2par}{function for maping Kendall's tau to the bivariate copula parameter}
 }
 \value{A list containing the following components:
@@ -66,7 +66,7 @@ a list containing two matrices with the rows of the output matrix x are copies o
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K. (2016) Hybrid copula mixed models for combining case-control and cohort studies in meta-analysis  of diagnostic tests \emph{ArXiv e-prints}, arXiv:1604.05456. 
+Nikoloulopoulos, A.K.  (2016) Hybrid copula mixed models for combining case-control and cohort studies in meta-analysis of diagnostic tests. \emph{Statistical Methods in Medical Research}, in press. \doi{10.1177/0962280216682376}. 
 }
 \seealso{
 \code{\link{VineCopulaREMADA}}, \code{\link{CopulaREMADA}}

@@ -33,9 +33,9 @@ rVineCopulaREMADA.norm(N,p,si,taus,qcondcop12,qcondcop13,qcondcop23,
 \item{si}{Vector \eqn{(\sigma_1,\sigma_2,\sigma_3)} of variability; normal margins}
 \item{g}{Vector \eqn{(\gamma_1,\gamma_2,\gamma_3)} of variability; beta margins}
 \item{taus}{Kendall's tau values}
-\item{qcondcop12}{function for conditional copula cdf at the (1,2) bivariate margin}
-\item{qcondcop13}{function for conditional copula cdf at the (1,3) bivariate margin}
-\item{qcondcop23}{function for conditional copula cdf at the (2,3|1) bivariate margin}
+\item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin}
+\item{qcondcop13}{function for the inverse of conditional copula cdf at the (1,3) bivariate margin}
+\item{qcondcop23}{function for the inverse of conditional copula cdf at the (2,3|1) bivariate margin}
 \item{tau2par12}{function for maping Kendall's tau at the (1,2) bivariate margin to copula parameter}
 \item{tau2par13}{function for maping Kendall's tau at the (1,3) bivariate margin to copula parameter}
 \item{tau2par23}{function for maping Kendall's tau at the (2,3|1) bivariate margin to the conditional copula parameter}
@@ -48,8 +48,7 @@ rVineCopulaREMADA.norm(N,p,si,taus,qcondcop12,qcondcop13,qcondcop23,
 \item{TN}{the number of true negatives}
 }
 \references{
-Nikoloulopoulos, A.K. (2015b) A vine copula mixed effect model  
-for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{Statistical Methods in Medical Research}, DOI:10.1177/0962280215596769. 
+Nikoloulopoulos, A.K.  (2017) A vine copula mixed effect model for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence. \emph{Statistical Methods in Medical Research}, \bold{26}, 2270--2286. \doi{10.1177/0962280215596769}.
 }
 \seealso{
 \code{\link{rCopulaREMADA}} \code{\link{rcop}}  \code{\link{cvinesim}}

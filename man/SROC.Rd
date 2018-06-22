@@ -19,7 +19,7 @@ SROC(param.beta,param.normal,TP,FN,FP,TN)
 \item{param.beta}{A vector with the sensitivity, specifity and variabilities of the countermonotonic CopulaREMADA with beta margins}
 \item{param.normal}{A vector with the sensitivity, specifity and variabilities of the countermonotonic CopulaREMADA with normal margins}
 \item{dcop}{function for copula density}
-\item{qcondcop}{function for conditional copula cdf}
+\item{qcondcop}{function for the inverse of conditional copula cdf}
 \item{tau2par}{function for maping Kendall's tau to copula parameter}
 \item{TP}{the number of true positives}
 \item{FN}{the number of false negatives}
@@ -31,7 +31,7 @@ SROC(param.beta,param.normal,TP,FN,FP,TN)
 \value{Summary receiver operating characteristic   curves
 }
 \references{
-Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{Statistics in Medicine}, 34:3842--3865. 
+Nikoloulopoulos, A.K.  (2015) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using a copula representation of the random effects distribution. \emph{Statistics in Medicine}, \bold{34}, 3842--3865. \doi{10.1002/sim.6595}.
 }
 
 \seealso{

@@ -42,7 +42,7 @@ countermonotonicCopulaREMADA.beta(TP,FN,FP,TN,gl,mgrid)
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
 a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}. For more details see also \code{\link{meshgrid}}}
-\item{qcond}{function for conditional copula cdf}
+\item{qcond}{function for the inverse of conditional copula cdf}
 \item{tau2par}{function for maping Kendall's tau to copula parameter}
 }
 \value{A list containing the following components:
@@ -57,7 +57,7 @@ a list containing two matrices with the rows of the output matrix x are copies o
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K. (2015a) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using  a copula representation of the random effects distribution, \emph{Statistics in Medicine}, 34:3842--3865. 
+Nikoloulopoulos, A.K.  (2015) A mixed effect model for bivariate meta-analysis of diagnostic test accuracy studies using a copula representation of the random effects distribution. \emph{Statistics in Medicine}, \bold{34}, 3842--3865. \doi{10.1002/sim.6595}.
 }
 \seealso{
 \code{\link{rCopulaREMADA}}

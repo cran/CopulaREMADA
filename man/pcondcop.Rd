@@ -1,28 +1,28 @@
-\name{qcondcop}
+\name{pcondcop}
 \Rdversion{1.1}
-\alias{qcondcop}
-\alias{qcondbvn}
-\alias{qcondfrk}
-\alias{qcondcln}
-\alias{qcondcln90}
-\alias{qcondcln180}
-\alias{qcondcln270}
+\alias{pcondcop}
+\alias{pcondbvn}
+\alias{pcondfrk}
+\alias{pcondcln}
+\alias{pcondcln90}
+\alias{pcondcln180}
+\alias{pcondcln270}
 \title{
-Bivariate copula conditional quantile functions
+Bivariate copula conditional distribution functions
 }
 \description{
-Bivariate copula conditional quantile functions
+Bivariate copula conditional distribution functions
 }
 \usage{
-qcondbvn(p,u,cpar)
-qcondfrk(p,u,cpar)
-qcondcln(p,u,cpar)
-qcondcln90(p,u,cpar)
-qcondcln270(p,u,cpar)
+pcondbvn(v,u,cpar)
+pcondfrk(v,u,cpar)
+pcondcln(v,u,cpar)
+pcondcln90(v,u,cpar)
+pcondcln270(v,u,cpar)
 }
 \arguments{
-\item{u}{conditioning value in interval 0,1; could be a vector }
-\item{p}{quantile in interval 0,1; could be a vector }
+\item{v}{conditioning value in interval 0,1; could be a vector }
+\item{u}{value in interval 0,1; could be a vector }
 \item{cpar}{copula parameter: scalar. }
 }
 \details{
@@ -38,7 +38,7 @@ Joe H (1997) \emph{Multivariate Models and Dependence Concepts}. Chapman & Hall
 
 Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall
 
-Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. \url{http://copula.stat.ubc.ca/}.   
+Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. \url{http://copula.stat.ubc.ca/}. 
 }
 \seealso{
 \code{\link{dcop}}

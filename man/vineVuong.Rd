@@ -30,9 +30,9 @@ tvine2.vuong.norm(qcondcop12,qcondcop13,
 tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid) 
 }
 \arguments{
-\item{qcondcop12}{function for conditional copula cdf at the (1,2) bivariate margin for Model 2}
-\item{qcondcop13}{function for conditional copula cdf at the (1,3) bivariate margin for Model 2}
-\item{qcondcop23}{function for conditional copula cdf at the (2,3|1) bivariate margin for Model 2}
+\item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin for Model 2}
+\item{qcondcop13}{function for the inverse of conditional copula cdf at the (1,3) bivariate margin for Model 2}
+\item{qcondcop23}{function for the inverse of conditional copula cdf at the (2,3|1) bivariate margin for Model 2}
 \item{tau2par12}{function for maping Kendall's tau at the (1,2) bivariate margin to copula parameter for Model 2}
 \item{tau2par13}{function for maping Kendall's tau at the (1,3) bivariate margin to copula parameter for Model 2}
 \item{tau2par23}{function for maping Kendall's tau at the (2,3|1) bivariate margin to the conditional copula parameter for Model 2}
@@ -61,10 +61,9 @@ a list containing three-dimensional arrays. For more details see \code{\link{mes
 \item{p-value}{the \eqn{p}-value}
 }
 \references{
-Nikoloulopoulos, A.K. (2015b) A vine copula mixed effect model  
-for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence, \emph{Statistical Methods in Medical Research}, DOI:10.1177/0962280215596769. 
+Nikoloulopoulos, A.K.  (2017) A vine copula mixed effect model for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence. \emph{Statistical Methods in Medical Research}, \bold{26}, 2270--2286. \doi{10.1177/0962280215596769}.
 
-Vuong Q.H. (1989) Likelihood ratio tests for model selection and non-nested hypotheses. \emph{Econometrica} 57(2), 307--333.
+Vuong Q.H. (1989) Likelihood ratio tests for model selection and non-nested hypotheses. \emph{Econometrica}, \bold{57}, 307--333.
 }
 \seealso{
 \code{\link{CopulaREMADA}}

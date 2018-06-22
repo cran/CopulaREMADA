@@ -16,7 +16,7 @@
 }
 }
 
-\references{Scheidler, J., H. Hricak, K. K. Yu, L. Subak, and M. R. Segal. (1997) Radiological evaluation of lymph node metastases in patients with cervical cancer: A meta-analysis.  \emph{Journal of the American Medical Association} 278: 1096--1101.
+\references{Scheidler, J., H. Hricak, K. K. Yu, L. Subak, and M. R. Segal. (1997) Radiological evaluation of lymph node metastases in patients with cervical cancer: A meta-analysis.  \emph{Journal of the American Medical Association},  \bold{278}, 1096--1101.
 }
 
 \keyword{datasets}

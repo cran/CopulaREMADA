@@ -8,13 +8,16 @@ export(CopulaREMADA.beta, CopulaREMADA.norm,
        vine.vuong.norm, vine.vuong.beta,
        tvine.vuong.norm, tvine.vuong.beta,
        tvine2.vuong.norm, tvine2.vuong.beta,
-       rVineCopulaREMADA.norm, rVineCopulaREMADA.beta
+       rVineCopulaREMADA.norm, rVineCopulaREMADA.beta,
+       quadVineCopulaREMADA.beta,quadVineCopulaREMADA.norm,
+       quadVineCopulaREMADA.norm.beta
        )
 export(dbvn, dfrk, dcln, dcln90, dcln180, dcln270,
  qcondbvn, qcondfrk, qcondcln, qcondcln90, qcondcln180, qcondcln270,
+  pcondbvn, pcondfrk, pcondcln, pcondcln90, pcondcln180, pcondcln270,
   rfrk, rcln, rcln90, rcln180, rcln270,
   tau2par.bvn, tau2par.frk, tau2par.cln, tau2par.cln90, tau2par.cln180,
-  tau2par.cln270, cvinesim)
+  tau2par.cln270, cvinesim,dvinesim)
 import(statmod)
 import(matlab)
 import(tensor)

@@ -14,7 +14,7 @@
 \item{FP}{the number of false positives}
 \item{TN}{the number of true negatives}
 }}
-\references{Glas A.S., Roos D., Deutekom M., Zwinderman A.H., Bossuyt P.M., Kurth K.H. (2003) Tumor markers in the diagnosis of primary bladder cancer. A systematic review. \emph{Journal of Urology} 169(6):1975--82.
+\references{Glas A.S., Roos D., Deutekom M., Zwinderman A.H., Bossuyt P.M., Kurth K.H. (2003) Tumor markers in the diagnosis of primary bladder cancer. A systematic review. \emph{Journal of Urology},  \bold{169}(6), 1975--82.
 }
 
 \keyword{datasets}

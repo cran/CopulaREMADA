@@ -14,9 +14,9 @@ cvinesim(N,param,qcondcop12,qcondcop13,qcondcop23,
 \arguments{
 \item{N}{sample size}
 \item{param}{Kendall's tau values for margins (1,2), (1,3), (23|1)}
-\item{qcondcop12}{function for conditional copula cdf at the (1,2) bivariate margin}
-\item{qcondcop13}{function for conditional copula cdf at the (1,3) bivariate margin}
-\item{qcondcop23}{function for conditional copula cdf at the (2,3|1) bivariate margin}
+\item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin}
+\item{qcondcop13}{function for the inverse of conditional copula cdf at the (1,3) bivariate margin}
+\item{qcondcop23}{function for the inverse of conditional copula cdf at the (2,3|1) bivariate margin}
 \item{tau2par12}{function for maping Kendall's tau at the (1,2) bivariate margin to copula parameter}
 \item{tau2par13}{function for maping Kendall's tau at the (1,3) bivariate margin to copula parameter}
 \item{tau2par23}{function for maping Kendall's tau at the (2,3|1) bivariate margin to the conditional copula parameter}
@@ -35,7 +35,7 @@ Joe H (2011) Dependence comparisons of vine copulae with four or more variables.
 
 Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall
 
-Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. URL http://copula.stat.ubc.ca/  
+Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. \url{http://copula.stat.ubc.ca/}.  
 }
 \seealso{
 \code{\link{qcondcop}}
