@@ -4,28 +4,18 @@
 \alias{rVineCopulaREMADA.norm}
 \alias{rVineCopulaREMADA.beta}
 \title{
-Simulation from vine copula mixed models for diagnostic test accuaracy studies accounting for disease prevalence
+Simulation from trivariate vine copula mixed models for diagnostic test accuaracy studies accounting for disease prevalence and non-evaluable results
 }
+
 \description{
-To simulate the data we have used the following steps:
-
-1. Simulate the study size \eqn{n} from a shifted gamma distribution with parameters \eqn{\alpha=1.2,\beta=0.01,lag=30} and round off to the nearest integer. 
-
-2. Simulate \eqn{(u_1,u_2,u_3)} from a trivariate C-vine copula. See also \code{\link{cvinesim}}.  
-
-3. Convert to beta realizations  or normal realizations. 
-
-4. Set the number of diseased \eqn{n_1=nx_1}.
-
-5. Set  \eqn{n_2=n-n_1, y_j=n_jx_j} and then round \eqn{y_j} for \eqn{j=1,2}. 
-
- 
+Simulation from trivariate vine copula mixed models for diagnostic test accuaracy studies accounting for disease prevalence and non-evaluable results
 }
+
 \usage{
-rVineCopulaREMADA.beta(N,p,g,taus,qcondcop12,qcondcop13,qcondcop23,
-             tau2par12,tau2par13,tau2par23)
-rVineCopulaREMADA.norm(N,p,si,taus,qcondcop12,qcondcop13,qcondcop23,
-             tau2par12,tau2par13,tau2par23)
+rVineCopulaREMADA.beta(N,p,g,taus,omega1,omega0,qcondcop12,qcondcop13,
+qcondcop23,tau2par12,tau2par13,tau2par23)
+rVineCopulaREMADA.norm(N,p,si,taus,omega1,omega0,qcondcop12,qcondcop13,
+qcondcop23,tau2par12,tau2par13,tau2par23)
 }
 \arguments{
 \item{N}{sample size}
@@ -33,6 +23,8 @@ rVineCopulaREMADA.norm(N,p,si,taus,qcondcop12,qcondcop13,qcondcop23,
 \item{si}{Vector \eqn{(\sigma_1,\sigma_2,\sigma_3)} of variability; normal margins}
 \item{g}{Vector \eqn{(\gamma_1,\gamma_2,\gamma_3)} of variability; beta margins}
 \item{taus}{Kendall's tau values}
+\item{omega1}{the probability for non-evaluable positives}
+\item{omega0}{the probability for non-evaluable negatives}
 \item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin}
 \item{qcondcop13}{function for the inverse of conditional copula cdf at the (1,3) bivariate margin}
 \item{qcondcop23}{function for the inverse of conditional copula cdf at the (2,3|1) bivariate margin}
@@ -41,14 +33,19 @@ rVineCopulaREMADA.norm(N,p,si,taus,qcondcop12,qcondcop13,qcondcop23,
 \item{tau2par23}{function for maping Kendall's tau at the (2,3|1) bivariate margin to the conditional copula parameter}
 }
 
-\value{A list containing the following simulated components:
-\item{TP}{the number of true positives}
+\value{Simuated data with 6 columns and \eqn{N} rows. \describe{
+    \item{TP}{the number of true positives}
 \item{FN}{the number of false negatives}
 \item{FP}{the number of false positives}
 \item{TN}{the number of true negatives}
+\item{NEP}{the number of non-evaluable positives}
+\item{NEN}{the number of non-evaluable negatives}
+}
 }
 \references{
 Nikoloulopoulos, A.K.  (2017) A vine copula mixed effect model for trivariate meta-analysis of diagnostic test accuracy studies accounting for disease prevalence. \emph{Statistical Methods in Medical Research}, \bold{26}, 2270--2286. \doi{10.1177/0962280215596769}.
+
+Nikoloulopoulos, A.K.  (2018) A vine copula mixed  model for trivariate meta-analysis of diagnostic studies accounting for disease prevalence and non-evaluable subjects.  \emph{ArXiv e-prints}, arXiv:1812.03685. \url{https://arxiv.org/abs/1812.03685}.
 }
 \seealso{
 \code{\link{rCopulaREMADA}} \code{\link{rcop}}  \code{\link{cvinesim}}
@@ -59,8 +56,18 @@ g=c(0.1,0.1,0.05)
 taus=c(-0.5,-0.3,-0.0001)
 qcondcop12=qcondcop23=qcondcop13=qcondcln90
 tau2par12=tau2par23=tau2par13=tau2par.cln90
-rVineCopulaREMADA.beta(50,p,g,taus,qcondcop12,qcondcop13,qcondcop23,
-             tau2par12,tau2par13,tau2par23)
+# in the absence of non-evaluable results
+omega1=0
+omega0=0
+rVineCopulaREMADA.beta(50,p,g,taus,omega1,omega0,
+qcondcop12,qcondcop13,qcondcop23,tau2par12,
+tau2par13,tau2par23)
+# in the presence of non-evaluable results
+omega1=0.1
+omega0=0.2
+rVineCopulaREMADA.beta(50,p,g,taus,omega1,omega0,
+qcondcop12,qcondcop13,qcondcop23,tau2par12,
+tau2par13,tau2par23)
 }
 \keyword{simulation}
 

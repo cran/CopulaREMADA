@@ -36,9 +36,9 @@ nx2 matrix with values in (0,1)
 \references{
 Joe H (1997) \emph{Multivariate Models and Dependence Concepts}. Chapman & Hall
 
-Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall
+Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall/CRC.
 
-Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. \url{http://copula.stat.ubc.ca/}.   
+Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. Software for book: \emph{Dependence Modeling with Copulas}, Chapman & Hall/CRC, 2014. 
 }
 \seealso{
 \code{\link{qcondcop}}

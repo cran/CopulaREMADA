@@ -21,8 +21,9 @@ export(dbvn, dfrk, dcln, dcln90, dcln180, dcln270,
 import(statmod)
 import(matlab)
 import(tensor)
+import(mc2d)
 importFrom("graphics", "contour", "legend", "lines", "plot", "points")
-     importFrom("stats", "cor", "dbeta", "dbinom", "dnorm", "integrate",
+     importFrom("stats","rmultinom","cor", "dbeta", "dbinom", "dnorm", "integrate",
      "nlm", "pbeta", "pnorm", "qbeta", "qnorm", "rbinom",
      "rgamma", "rnorm", "runif", "sd", "uniroot", "var")
 

@@ -1,4 +1,4 @@
-vinepmf.norm<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
+vinepmf.norm<-function(param,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
                           qcondcop12,qcondcop13,qcondcop23,
                           tau2par12,tau2par13,tau2par23)
 { p=param[1:3]
@@ -29,13 +29,14 @@ vinepmf.norm<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
   N=length(TP)
   prob<-rep(NA,N)
   for(i in 1:N)
-  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],perm)
+  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],
+                      NEP[i],NEN[i],perm)
     prob[i]= tensor(tensor(temp,gl$w,3,1),gl$w,2,1)%*%gl$w
   }
   prob
 }
 
-vinepmf.beta<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
+vinepmf.beta<-function(param,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
                           qcondcop12,qcondcop13,qcondcop23,
                           tau2par12,tau2par13,tau2par23)
 { p=param[1:3]
@@ -61,13 +62,14 @@ vinepmf.beta<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
   N=length(TP)
   prob<-rep(NA,N)
   for(i in 1:N)
-  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],perm)
+  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],NEP[i],
+                      NEN[i],perm)
     prob[i]= tensor(tensor(temp,gl$w,3,1),gl$w,2,1)%*%gl$w
   }
   prob
 }
 
-tvinepmf.norm<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
+tvinepmf.norm<-function(param,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
                            qcondcop12,qcondcop13,
                            tau2par12,tau2par13)
 { p=param[1:3]
@@ -96,13 +98,14 @@ tvinepmf.norm<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
   N=length(TP)
   prob<-rep(NA,N)
   for(i in 1:N)
-  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],perm)
+  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],
+                      NEP[i],NEN[i],perm)
     prob[i]= tensor(tensor(temp,gl$w,3,1),gl$w,2,1)%*%gl$w
   }
   prob
 }
 
-tvinepmf.beta<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
+tvinepmf.beta<-function(param,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
                            qcondcop12,qcondcop13,
                            tau2par12,tau2par13)
 { p=param[1:3]
@@ -126,18 +129,20 @@ tvinepmf.beta<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
   N=length(TP)
   prob<-rep(NA,N)
   for(i in 1:N)
-  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],perm)
+  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],
+                      NEP[i],NEN[i],perm)
     prob[i]= tensor(tensor(temp,gl$w,3,1),gl$w,2,1)%*%gl$w
   }
   prob
 }
 
 vine.vuong.norm=function(qcondcop12,qcondcop13,qcondcop23,tau2par12,tau2par13,tau2par23,
-                    param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
-{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
+                    param1,param2,TP,FN,FP,TN,perm,gl,mgrid,
+                    NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
+{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
                   tau2par.bvn,tau2par.bvn,tau2par.bvn)
   n=length(prob1)
-  prob2=vinepmf.norm(param2,TP,FN,FP,TN,perm,gl,mgrid,qcondcop12,qcondcop13,qcondcop23,
+  prob2=vinepmf.norm(param2,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondcop12,qcondcop13,qcondcop23,
                   tau2par12,tau2par13,tau2par23)
   m=log(prob2/prob1)
   z=sqrt(n)*mean(m)/sd(m)
@@ -149,11 +154,12 @@ vine.vuong.norm=function(qcondcop12,qcondcop13,qcondcop23,tau2par12,tau2par13,ta
 }
 
 vine.vuong.beta=function(qcondcop12,qcondcop13,qcondcop23,tau2par12,tau2par13,tau2par23,
-                    param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
-{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
+                    param1,param2,TP,FN,FP,TN,perm,gl,mgrid,
+                    NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
+{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
                   tau2par.bvn,tau2par.bvn,tau2par.bvn)
   n=length(prob1)
-  prob2=vinepmf.beta(param2,TP,FN,FP,TN,perm,gl,mgrid,qcondcop12,qcondcop13,qcondcop23,
+  prob2=vinepmf.beta(param2,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondcop12,qcondcop13,qcondcop23,
                   tau2par12,tau2par13,tau2par23)
   m=log(prob2/prob1)
   z=sqrt(n)*mean(m)/sd(m)
@@ -167,11 +173,12 @@ vine.vuong.beta=function(qcondcop12,qcondcop13,qcondcop23,tau2par12,tau2par13,ta
 
 
 tvine.vuong.norm=function(qcondcop12,qcondcop13,tau2par12,tau2par13,
-                         param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
-{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
+                         param1,param2,TP,FN,FP,TN,perm,gl,mgrid,
+                         NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
+{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
                   tau2par.bvn,tau2par.bvn,tau2par.bvn)
   n=length(prob1)
-  prob2=tvinepmf.norm(param2,TP,FN,FP,TN,perm,gl,mgrid,qcondcop12,qcondcop13,
+  prob2=tvinepmf.norm(param2,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondcop12,qcondcop13,
                        tau2par12,tau2par13)
   m=log(prob2/prob1)
   z=sqrt(n)*(mean(m)+1/n)/sd(m)
@@ -183,11 +190,12 @@ tvine.vuong.norm=function(qcondcop12,qcondcop13,tau2par12,tau2par13,
 }
 
 tvine.vuong.beta=function(qcondcop12,qcondcop13,tau2par12,tau2par13,
-                         param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
-{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
+                         param1,param2,TP,FN,FP,TN,perm,gl,mgrid,
+                         NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
+{ prob1=vinepmf.norm(param1,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondbvn,qcondbvn,qcondbvn,
                   tau2par.bvn,tau2par.bvn,tau2par.bvn)
   n=length(prob1)
-  prob2=tvinepmf.beta(param2,TP,FN,FP,TN,perm,gl,mgrid,qcondcop12,qcondcop13,
+  prob2=tvinepmf.beta(param2,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,qcondcop12,qcondcop13,
                        tau2par12,tau2par13)
   m=log(prob2/prob1)
   z=sqrt(n)*(mean(m)+1/n)/sd(m)
@@ -199,7 +207,8 @@ tvine.vuong.beta=function(qcondcop12,qcondcop13,tau2par12,tau2par13,
 }
 
 tvine2.vuong.norm=function(qcondcop12,qcondcop13,tau2par12,tau2par13,
-                          param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
+                          param1,param2,TP,FN,FP,TN,perm,gl,mgrid,
+                          NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 { prob1=tvinepmf.norm(param1,TP,FN,FP,TN,perm,gl,mgrid,qcondbvn,qcondbvn,
                        tau2par.bvn,tau2par.bvn)
   n=length(prob1)
@@ -215,7 +224,8 @@ tvine2.vuong.norm=function(qcondcop12,qcondcop13,tau2par12,tau2par13,
 }
 
 tvine2.vuong.beta=function(qcondcop12,qcondcop13,tau2par12,tau2par13,
-                          param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
+                          param1,param2,TP,FN,FP,TN,perm,gl,mgrid,
+                          NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 { prob1=tvinepmf.norm(param1,TP,FN,FP,TN,perm,gl,mgrid,qcondbvn,qcondbvn,
                        tau2par.bvn,tau2par.bvn)
   n=length(prob1)

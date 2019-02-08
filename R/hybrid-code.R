@@ -15,13 +15,12 @@ doublelik.norm=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgr
   if(tau12< -0.95 | tau12>=0.95) return(1.e10)
   if(tau13< -0.95 | tau13>=0.95) return(1.e10)
   if(tau< -0.95 | tau>=0.95) return(1.e10)
-  
-  lik.cohort=tvineloglik.norm(param[-9],TP1,FN1,FP1,TN1,perm,gl,mgrid1,
-                                     qcondcop12,qcondcop13,
-                                     tau2par12,tau2par13)
+  N=length(TP1)
+  lik.cohort=tvineloglik.norm(param[-9],TP1,FN1,FP1,TN1,
+  rep(0,N),rep(0,N),perm,gl,mgrid1,
+  qcondcop12,qcondcop13,tau2par12,tau2par13)
   lik.caseControl=loglik.norm(c(p[sel==1],p[sel==2],si[sel==1],si[sel==2],tau),
                               TP2,FN2,FP2,TN2,gl,mgrid2,qcond,tau2par)
- 
   out=lik.caseControl + lik.cohort
   out
 }
@@ -45,13 +44,12 @@ doublelik.beta=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgr
   if(tau12< -0.95 | tau12>=0.95) return(1.e10)
   if(tau13< -0.95 | tau13>=0.95) return(1.e10)
   if(tau< -0.95 | tau>=0.95) return(1.e10)
-  
-  lik.cohort=tvineloglik.beta(param[-9],TP1,FN1,FP1,TN1,perm,gl,mgrid1,
-                              qcondcop12,qcondcop13,
-                              tau2par12,tau2par13)
+  N=length(TP1)
+  lik.cohort=tvineloglik.beta(param[-9],TP1,FN1,FP1,TN1,
+  rep(0,N),rep(0,N),perm,gl,mgrid1,qcondcop12,qcondcop13,
+  tau2par12,tau2par13)
   lik.caseControl=loglik.beta(c(p[sel==1],p[sel==2],g[sel==1],g[sel==2],tau),
-                              TP2,FN2,FP2,TN2,gl,mgrid2,qcond,tau2par)
-  
+  TP2,FN2,FP2,TN2,gl,mgrid2,qcond,tau2par)
   out= lik.caseControl + lik.cohort
   out
 }

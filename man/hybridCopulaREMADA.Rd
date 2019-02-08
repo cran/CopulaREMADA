@@ -66,7 +66,7 @@ a list containing two matrices with the rows of the output matrix x are copies o
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K.  (2016) Hybrid copula mixed models for combining case-control and cohort studies in meta-analysis of diagnostic tests. \emph{Statistical Methods in Medical Research}, in press. \doi{10.1177/0962280216682376}. 
+Nikoloulopoulos, A.K.  (2018) Hybrid copula mixed models for combining case-control and cohort studies in meta-analysis of diagnostic tests. \emph{Statistical Methods in Medical Research}, \bold{27}, 2540--2553. \doi{10.1177/0962280216682376}. 
 }
 \seealso{
 \code{\link{VineCopulaREMADA}}, \code{\link{CopulaREMADA}}
@@ -79,8 +79,8 @@ g=c(0.1,0.1,0.05)
 taus=c(-0.5,-0.3,-0.0001)
 qcondcop12=qcondcop23=qcondcop13=qcondcln90
 tau2par12=tau2par23=tau2par13=tau2par.cln90
-simdat1=rVineCopulaREMADA.beta(N,p,g,taus,qcondcop12,qcondcop13,qcondcop23,
-             tau2par12,tau2par13,tau2par23)
+simdat1=rVineCopulaREMADA.beta(N,p,g,taus,0,0,
+qcondcop12,qcondcop13,qcondcop23,tau2par12,tau2par13,tau2par23)
 # simulate data from the N=25 case-control studies
 tau=0.5
 p=p[-3]

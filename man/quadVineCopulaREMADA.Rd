@@ -61,7 +61,7 @@ a list containing 4-dimensional arrays.}
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K.  (2018b) A D-vine copula mixed model for joint meta-analysis and comparison of  diagnostic tests.  \emph{ArXiv e-prints}, arXiv:1805.09674. \url{https://arxiv.org/abs/1805.09674}.
+Nikoloulopoulos, A.K. (2018) A D-vine copula mixed model for joint meta-analysis and comparison of  diagnostic tests.  \emph{Statistical Methods in Medical Research}, in press. \doi{10.1177/0962280218796685}. 
 }
 
 \examples{

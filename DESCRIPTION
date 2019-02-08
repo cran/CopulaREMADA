@@ -1,14 +1,14 @@
 Package: CopulaREMADA
-Version: 1.1
-Date: 2018-05-31
-Title: Copula Mixed Effect Models for Multivariate Meta-Analysis of
+Version: 1.2
+Date: 2019-02-08
+Title: Copula Mixed Effects Models for Multivariate Meta-Analysis of
         Diagnostic Test Accuracy Studies
 Author: Aristidis K. Nikoloulopoulos <A.Nikoloulopoulos@uea.ac.uk> 
 Maintainer: Aristidis K. Nikoloulopoulos <A.Nikoloulopoulos@uea.ac.uk>
-Depends: R (>= 2.10), statmod, matlab, tensor
-Description: It has functions to implement the copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies.    
+Depends: R (>= 2.10), statmod, matlab, tensor, mc2d
+Description: The bivariate copula mixed model for meta-analysis of diagnostic test accuracy studies in Nikoloulopoulos (2015) <doi:10.1002/sim.6595>. The vine copula mixed model for meta-analysis of diagnostic test accuracy studies accounting for disease prevalence in Nikoloulopoulos (2017) <doi:10.1177/0962280215596769> and also accounting for non-evaluable subjects in Nikoloulopoulos (2018) <arXiv:1812.03685>. The hybrid vine copula mixed model for meta-analysis of diagnostic test accuracy case-control and cohort studies in Nikoloulopoulos (2018) <doi:10.1177/0962280216682376>. The D-vine copula mixed model for meta-analysis and comparison of two diagnostic tests in Nikoloulopoulos (2018) <doi:10.1177/0962280218796685>.  
 License: GPL (>= 2.10)
-Packaged: 2018-06-22 08:23:47 UTC; xry09vgu
+Packaged: 2019-02-08 09:39:31 UTC; xry09vgu
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2018-06-22 17:41:39 UTC
+Date/Publication: 2019-02-08 10:23:57 UTC

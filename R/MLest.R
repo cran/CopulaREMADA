@@ -1,29 +1,27 @@
-tribinomprod=function(x1,x2,x3,TP,FN,FP,TN,perm)
+tribinomprod=function(x1,x2,x3,TP,FN,FP,TN,NEP,NEN,perm)
 { n1=TP+FN
   n2=TN+FP
-  n3=n1+n2
+  n3=n1+n2+NEP+NEN
   if(perm==1) # 12, 13, 23|1
   { f1=dbinom(TP,size=n1,prob=x1)
     f2=dbinom(TN,size=n2,prob=x2)
-    f3=dbinom((TP+FN),size=n3,prob=x3)
-  } else {
-    if(perm==2) # 21, 23, 13|2
-    { f1=dbinom(TN,size=n2,prob=x1)
-      f2=dbinom(TP+FN,size=n3,prob=x2)
-      f3=dbinom(TP,size=n1,prob=x3)
-      
-    } else { # 31, 32, 12|3
-      f1=dbinom(TP+FN,size=n3,prob=x1)
-      f2=dbinom(TP,size=n1,prob=x2)
-      f3=dbinom(TN,size=n2,prob=x3)
-    }}
-  f1*f2*f3    
+    f3=dbinom(TP+FN+NEP,size=n3,prob=x3)
+   } else {
+   if(perm==2) # 21, 23, 13|2
+   { f1=dbinom(TN,size=n2,prob=x1)
+     f2=dbinom(TP+FN+NEP,size=n3,prob=x2)
+     f3=dbinom(TP,size=n1,prob=x3)
+   } else { # 31, 32, 12|3
+     f1=dbinom(TP+FN+NEP,size=n3,prob=x1)
+     f2=dbinom(TP,size=n1,prob=x2)
+     f3=dbinom(TN,size=n2,prob=x3)
+   }}
+ f1*f2*f3    
 }
 
 
-
 ###################################################
-vineloglik.norm<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
+vineloglik.norm<-function(param,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
                           qcondcop12,qcondcop13,qcondcop23,
                           tau2par12,tau2par13,tau2par23)
 { p=param[1:3]
@@ -61,7 +59,7 @@ vineloglik.norm<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
   N=length(TP)
   prob<-rep(NA,N)
   for(i in 1:N)
-  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],perm)
+  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],NEP[i],NEN[i],perm)
     prob[i]= tensor(tensor(temp,gl$w,3,1),gl$w,2,1)%*%gl$w
   }
   -sum(log(prob))
@@ -72,14 +70,17 @@ vineloglik.norm<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
 
 VineCopulaREMADA.norm=function(TP,FN,FP,TN,perm,gl,mgrid,
                                qcondcop12,qcondcop13,qcondcop23,
-                               tau2par12,tau2par13,tau2par23)
+                               tau2par12,tau2par13,tau2par23,
+                               NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 { rTP=TP + 0.5*(TP==0)
   rFN=FN + 0.5*(FN==0)
   rFP=FP + 0.5*(FP==0)
   rTN=TN + 0.5*(TN==0)
+  rNEP=NEP + 0.5*(NEP==0)
+  rNEN=NEN + 0.5*(NEN==0)
   SE=rTP/(rTP+rFN)
   SP=rTN/(rTN+rFP)
-  PR=(rTP+rFN)/(rTP+rFN+rTN+rFP)
+  PR=(rTP+rFN+rNEP)/(rTP+rFN+rTN+rFP+rNEP+rNEN)
   z=cbind(SE,SP,PR)
   if(perm==1) {sel=1:3} else {if(perm==2){sel=c(2,3,1)} else {sel=c(3,1,2)}}
   z=z[,sel]
@@ -88,14 +89,14 @@ VineCopulaREMADA.norm=function(TP,FN,FP,TN,perm,gl,mgrid,
   si<-sqrt(apply(logitz,2,var))
   stau=cor(logitz,method="kendall")
   inipar=c(p,si,stau[1,2],stau[1,3],-0.1)
-  est=nlm(vineloglik.norm,inipar,TP,FN,FP,TN,perm,gl,mgrid,
+  est=nlm(vineloglik.norm,inipar,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
           qcondcop12,qcondcop23,qcondcop13,
           tau2par12,tau2par23,tau2par13,hessian=T)
   est
 }
 
 ###################################################
-vineloglik.beta<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
+vineloglik.beta<-function(param,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
                           qcondcop12,qcondcop13,qcondcop23,
                           tau2par12,tau2par13,tau2par23)
 { p=param[1:3]
@@ -130,7 +131,7 @@ vineloglik.beta<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
   N=length(TP)
   prob<-rep(NA,N)
   for(i in 1:N)
-  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],perm)
+  { temp=tribinomprod(x1,x2,x3,TP[i],FN[i],FP[i],TN[i],NEP[i],NEN[i],perm)
     prob[i]= tensor(tensor(temp,gl$w,3,1),gl$w,2,1)%*%gl$w
   }
   -sum(log(prob))
@@ -141,10 +142,11 @@ vineloglik.beta<-function(param,TP,FN,FP,TN,perm,gl,mgrid,
 
 VineCopulaREMADA.beta=function(TP,FN,FP,TN,perm,gl,mgrid,
                                qcondcop12,qcondcop13,qcondcop23,
-                               tau2par12,tau2par13,tau2par23)
+                               tau2par12,tau2par13,tau2par23,
+                               NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 { temp1=TP+FN
   temp2=TN+FP
-  z=cbind(TP/temp1,TN/temp2,temp1/(temp1+temp2))
+  z=cbind(TP/temp1,TN/temp2,(temp1+NEP)/(temp1+temp2+NEP+NEN))
   if(perm==1) {sel=1:3} else {if(perm==2){sel=c(2,3,1)} else {sel=c(3,1,2)}}
   z=z[,sel]
   p<-apply(z,2,mean)
@@ -152,7 +154,7 @@ VineCopulaREMADA.beta=function(TP,FN,FP,TN,perm,gl,mgrid,
   g=si2/p/(1-p)
   stau=cor(z,method="kendall")
   inipar=c(p,g,stau[1,2],stau[1,3],-0.1)
-  est=nlm(vineloglik.beta,inipar,TP,FN,FP,TN,perm,gl,mgrid,
+  est=nlm(vineloglik.beta,inipar,TP,FN,FP,TN,NEP,NEN,perm,gl,mgrid,
           qcondcop12,qcondcop23,qcondcop13,
           tau2par12,tau2par23,tau2par13,hessian=T)
   est

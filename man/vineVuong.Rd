@@ -17,17 +17,17 @@ It shows if a vine copula mixed model provides better fit than the standard GLMM
 }
 \usage{
 vine.vuong.beta(qcondcop12,qcondcop13,qcondcop23,
-tau2par12,tau2par13,tau2par23,param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
+tau2par12,tau2par13,tau2par23,param1,param2,TP,FN,FP,TN,perm,gl,mgrid,NEP,NEN)
 vine.vuong.norm(qcondcop12,qcondcop13,qcondcop23,
-tau2par12,tau2par13,tau2par23,param1,param2,TP,FN,FP,TN,perm,gl,mgrid) 
+tau2par12,tau2par13,tau2par23,param1,param2,TP,FN,FP,TN,perm,gl,mgrid,NEP,NEN) 
 tvine.vuong.beta(qcondcop12,qcondcop13,
-tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
+tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid,NEP,NEN)
 tvine.vuong.norm(qcondcop12,qcondcop13,
-tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid) 
+tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid,NEP,NEN) 
 tvine2.vuong.beta(qcondcop12,qcondcop13,
-tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
+tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid,NEP,NEN)
 tvine2.vuong.norm(qcondcop12,qcondcop13,
-tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid) 
+tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid,NEP,NEN) 
 }
 \arguments{
 \item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin for Model 2}
@@ -54,6 +54,8 @@ tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,perm,gl,mgrid)
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
 a list containing three-dimensional arrays. For more details see \code{\link{meshgrid}}}
+\item{NEP}{the number of non-evaluable positives in the presence of non-evaluable subjects}
+\item{NEN}{the number of non-evaluable negatives in the presence of non-evaluable subjects}
 }
 \value{A list containing the following components:
 

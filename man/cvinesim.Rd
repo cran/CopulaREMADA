@@ -33,9 +33,9 @@ Nx3 matrix with values in (0,1)
 \references{
 Joe H (2011) Dependence comparisons of vine copulae with four or more variables. In: Kurowicka D, Joe H, editors. \emph{Dependence Modeling: Handbook on Vine Copulae}. Singapore: World Scientific; 2011. p. 139--164
 
-Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall
+Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall/CRC.
 
-Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. \url{http://copula.stat.ubc.ca/}.  
+Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. Software for book: \emph{Dependence Modeling with Copulas}, Chapman & Hall/CRC, 2014.
 }
 \seealso{
 \code{\link{qcondcop}}

@@ -33,11 +33,11 @@ Nx4 matrix with values in (0,1)
 \references{
 Joe H (2011) Dependence comparisons of vine copulae with four or more variables. In: Kurowicka D, Joe H, editors. \emph{Dependence Modeling: Handbook on Vine Copulae}. Singapore: World Scientific; 2011. p. 139--164
 
-Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall
+Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall/CRC.
 
-Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. \url{http://copula.stat.ubc.ca/}. 
+Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. Software for book: \emph{Dependence Modeling with Copulas}, Chapman & Hall/CRC, 2014.
 
-Nikoloulopoulos, A.K.  (2018b) A D-vine copula mixed model for joint meta-analysis and comparison of  diagnostic tests.  \emph{ArXiv e-prints}, arXiv:1805.09674. \url{https://arxiv.org/abs/1805.09674}. 
+Nikoloulopoulos, A.K. (2018) A D-vine copula mixed model for joint meta-analysis and comparison of  diagnostic tests.  \emph{Statistical Methods in Medical Research}, in press. \doi{10.1177/0962280218796685}. 
 }
 \seealso{
 \code{\link{qcondcop}}
