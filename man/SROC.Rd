@@ -10,9 +10,14 @@ Summary receiver operating characteristic   curves for copula mixed effect model
 Summary receiver operating characteristic (SROC) curves are demonstrated for the proposed models through quantile regression techniques and different characterizations of the estimated bivariate random effects distribution  
 }
 \usage{
-SROC.norm(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TRUE)
-SROC.beta(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TRUE)
-SROC(param.beta,param.normal,TP,FN,FP,TN)
+SROC.norm(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,
+          points=TRUE,curves=TRUE,
+          NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
+SROC.beta(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,
+          points=TRUE,curves=TRUE,
+          NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
+SROC(param.beta,param.normal,TP,FN,FP,TN,
+          NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 }
 \arguments{
 \item{param}{A vector with the sensitivities, specifities, variabilities and Kendall's tau value (the latter only for \code{\link{SROC.norm}} and \code{\link{SROC.beta}})}
@@ -27,6 +32,8 @@ SROC(param.beta,param.normal,TP,FN,FP,TN)
 \item{TN}{the number of true negatives}
 \item{points}{logical: print individual studies}
 \item{curves}{logical: print quantile regression curves}
+\item{NEP}{the number of non-evaluable positives in the presence of non-evaluable subjects}
+\item{NEN}{the number of non-evaluable negatives in the presence of non-evaluable subjects}
 }
 \value{Summary receiver operating characteristic   curves
 }
@@ -61,6 +68,17 @@ attach(MRI)
 c270est.n=CopulaREMADA.norm(TP,FN,FP,TN,gl,mgrid,qcondcln270,tau2par.cln270)
 SROC.norm(c270est.n$e,dcln270,qcondcln270,tau2par.cln270,TP,FN,FP,TN)
 detach(MRI)
+
+data(MK2016)
+attach(MK2016)
+p=c(0.898745016,0.766105342,0.059168715,0.109217888)
+g=c(0.090270947,0.079469009,0.367463579,0.154976269)
+taus=c(0.82050793,-0.51867629,0.26457961)
+SROC.beta(c(p[1:2],g[1:2],taus[1]),
+          dcln180,qcondcln180,tau2par.cln180,
+          TP,FN,FP,TN,points=TRUE,curves=TRUE,NEP,NEN)
+detach(MK2016)
+
 
 }
 \keyword{graphics}

@@ -7,6 +7,12 @@ tVineCopulaREMADA.norm truncated VineCopulaREMADA with normal margins
 quadVineCopulaREMADA.beta quadrivariate VineCopulaREMADA with beta margins
 quadVineCopulaREMADA.norm quadrivariate VineCopulaREMADA with normal margins
 quadVineCopulaREMADA.norm.beta quadrivariate VineCopulaREMADA with normal and beta margins
+multinomVineCopulaREMADA.beta multinomial VineCopulaREMADA with beta margins
+multinomVineCopulaREMADA.norm multinomial VineCopulaREMADA with normal margins
+tmultinomVineCopulaREMADA.beta multinomial truncated VineCopulaREMADA with beta margins
+tmultinomVineCopulaREMADA.norm multinomial truncated VineCopulaREMADA with normal margins
+rmultinomVineCopulaREMADA.norm simulated multinomial truncated VineCopulaREMADA with normal margins
+rmultinomVineCopulaREMADA.beta simulated multinomial truncated VineCopulaREMADA with beta margins
 countermonotonicCopulaREMADA.beta countermonotonic CopulaREMADA with beta margins
 countermonotonicCopulaREMADA.norm countermonotonic CopulaREMADA with normal margins
 hybridCopulaREMADA.beta hybridCopulaREMADA with beta margins

@@ -1,9 +1,9 @@
 \name{CopulaREMADA-package}
 \alias{CopulaREMADA-package}
 \docType{package}
-\title{Copula Mixed Effect Models for Multivariate Meta-Analysis of Diagnostic Test Accuracy Studies}
+\title{Copula Mixed  Models for Multivariate Meta-Analysis of Diagnostic Test Accuracy Studies}
 \description{
- Fits copula mixed effect models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2018c). 
+ Fits copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2018c, 2018e). 
 }
 \details{
 This package contains \R functions to implement: 
@@ -17,7 +17,9 @@ This package contains \R functions to implement:
 \item The hybrid vine copula mixed model for meta-analysis of diagnostic test accuracy case-control and cohort studies (Nikoloulopoulos, 2018c);
 
 
-\item The D-vine copula mixed model for meta-analysis and comparison of two diagnostic tests (Nikoloulopoulos, 2018d).  
+\item The D-vine copula mixed model for meta-analysis and comparison of two diagnostic tests (Nikoloulopoulos, 2018d). 
+
+\item The multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis accounting for non-evaluable subjects (Nikoloulopoulos, 2018e). 
 }
 
 
@@ -40,7 +42,7 @@ Nikoloulopoulos, A.K. (2018c) Hybrid copula mixed models for combining case-cont
 
 Nikoloulopoulos, A.K.  (2018d) A D-vine copula mixed model for joint meta-analysis and comparison of  diagnostic tests.  \emph{Statistical Methods in Medical Research}, in press. \doi{10.1177/0962280218796685}. 
 
-
+Nikoloulopoulos, A.K. (2018e) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis accounting for non-evaluable subjects.  \emph{ArXiv e-prints}, arXiv:1812.05915. \url{https://arxiv.org/abs/1812.05915}.
 
 
 }

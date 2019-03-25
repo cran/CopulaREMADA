@@ -3,7 +3,7 @@
 \docType{data}
 \title{The coronary CT angiography data}
 
-\description{Data on 26 studies of cornary computed tomography (CT) on 26 studies from a  systematic review for diagnostic accuracy studies of coronary CT angiography.  
+\description{Data on 26 studies from a systematic review for diagnostic accuracy studies of coronary computed tomography angiography for the detection of coronary artery disease.  
 }
 \usage{data(coronary)}
 \format{

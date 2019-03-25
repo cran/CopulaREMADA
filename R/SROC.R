@@ -1,4 +1,6 @@
-SROC.beta=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TRUE)
+SROC.beta=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,
+                   points=TRUE,curves=TRUE,
+                   NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 { p=param[1:2]
   g=param[3:4]
   tau=param[5]
@@ -22,7 +24,7 @@ SROC.beta=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TR
           xlim=c(0,1),ylim=c(0,1))
   points(p[1],p[2],pch=15,cex = 2)
   if(points)
-  { z=cbind(TP/(TP+FN),TN/(TN+FP))
+  { z=cbind(TP/(TP+FN+NEP),TN/(TN+FP+NEN))
     points(z)
   }
   if(curves)
@@ -41,7 +43,8 @@ SROC.beta=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TR
 
 
 
-SROC.norm=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TRUE)
+SROC.norm=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TRUE,
+                   NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 { p=param[1:2]
   si=param[3:4]
   tau=param[5]
@@ -68,8 +71,9 @@ SROC.norm=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TR
     rFN=FN + 0.5*(FN==0)
     rFP=FP + 0.5*(FP==0)
     rTN=TN + 0.5*(TN==0)
-    SE=rTP/(rTP+rFN)
-    SP=rTN/(rTN+rFP)
+    
+    SE=rTP/(rTP+rFN+NEP)
+    SP=rTN/(rTN+rFP+NEN)
     z=cbind(SE,SP)
     logitz=log(z/(1-z))
     points(logitz[,1],logitz[,2])
@@ -88,7 +92,8 @@ SROC.norm=function(param,dcop,qcondcop,tau2par,TP,FN,FP,TN,points=TRUE,curves=TR
   }  
 }
 
-SROC=function(param.beta,param.normal,TP,FN,FP,TN)
+SROC=function(param.beta,param.normal,TP,FN,FP,TN,
+              NEP=rep(0,length(TP)),NEN=rep(0,length(TP)))
 { p.beta=param.beta[1:2]
   g=param.beta[3:4]
   p.normal=param.normal[1:2]
@@ -109,7 +114,7 @@ SROC=function(param.beta,param.normal,TP,FN,FP,TN)
   x1star.normal=exp(x1star.normal)
   x1star.normal=x1star.normal/(1+x1star.normal)
   
-  z=cbind(TP/(TP+FN),TN/(TN+FP))
+  z=cbind(TP/(TP+FN+NEP),TN/(TN+FP+NEN))
   
   plot(z,xlab="Sensitivity",ylab="Specificity",xlim=c(0,1),ylim=c(0,1),type="p")
   points(p.normal[1],p.normal[2],pch=15,cex = 1.5)
