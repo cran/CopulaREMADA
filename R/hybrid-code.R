@@ -1,9 +1,8 @@
-doublelik.norm=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgrid2,
+doublelik.norm=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,gl,mgrid1,mgrid2,
                         qcondcop12,qcondcop13,
                         tau2par12,tau2par13,
                         qcond,tau2par)
-{ if(perm==1) {sel=1:3} else {if(perm==2){sel=c(2,3,1)} else {sel=c(3,1,2)}}
-  p=param[1:3]
+{ p=param[1:3]
   si=param[4:6]
   tau12=param[7]
   tau13=param[8]
@@ -17,20 +16,19 @@ doublelik.norm=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgr
   if(tau< -0.95 | tau>=0.95) return(1.e10)
   N=length(TP1)
   lik.cohort=tvineloglik.norm(param[-9],TP1,FN1,FP1,TN1,
-  rep(0,N),rep(0,N),perm,gl,mgrid1,
+  rep(0,N),rep(0,N),gl,mgrid1,
   qcondcop12,qcondcop13,tau2par12,tau2par13)
-  lik.caseControl=loglik.norm(c(p[sel==1],p[sel==2],si[sel==1],si[sel==2],tau),
+  lik.caseControl=loglik.norm(c(p[1],p[2],si[1],si[2],tau),
                               TP2,FN2,FP2,TN2,gl,mgrid2,qcond,tau2par)
   out=lik.caseControl + lik.cohort
   out
 }
 
 
-doublelik.beta=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgrid2,
+doublelik.beta=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,gl,mgrid1,mgrid2,
                         qcondcop12,qcondcop13,
                         tau2par12,tau2par13,qcond,tau2par)
-{ if(perm==1) {sel=1:3} else {if(perm==2){sel=c(2,3,1)} else {sel=c(3,1,2)}}
-  p=param[1:3] 
+{ p=param[1:3] 
   g=param[4:6]
   tau12=param[7]
   tau13=param[8]
@@ -46,15 +44,15 @@ doublelik.beta=function(param,TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgr
   if(tau< -0.95 | tau>=0.95) return(1.e10)
   N=length(TP1)
   lik.cohort=tvineloglik.beta(param[-9],TP1,FN1,FP1,TN1,
-  rep(0,N),rep(0,N),perm,gl,mgrid1,qcondcop12,qcondcop13,
+  rep(0,N),rep(0,N),gl,mgrid1,qcondcop12,qcondcop13,
   tau2par12,tau2par13)
-  lik.caseControl=loglik.beta(c(p[sel==1],p[sel==2],g[sel==1],g[sel==2],tau),
+  lik.caseControl=loglik.beta(c(p[1],p[2],g[1],g[2],tau),
   TP2,FN2,FP2,TN2,gl,mgrid2,qcond,tau2par)
   out= lik.caseControl + lik.cohort
   out
 }
 
-hybridCopulaREMADA.norm=function(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
+hybridCopulaREMADA.norm=function(TP,FN,FP,TN,type,gl,mgrid1,mgrid2,
                qcondcop12,qcondcop13,
                tau2par12,tau2par13,qcond,tau2par)
 { TP1=TP[type==1]
@@ -74,8 +72,6 @@ hybridCopulaREMADA.norm=function(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
   SP1=rTN1/(rTN1+rFP1)
   PR1=(rTP1+rFN1)/(rTP1+rFN1+rTN1+rFP1)
   z1=cbind(SE1,SP1,PR1)
-  if(perm==1) {sel=1:3} else {if(perm==2){sel=c(2,3,1)} else {sel=c(3,1,2)}}
-  z1=z1[,sel]
   logitz1=log(z1/(1-z1))
   p1=apply(z1,2,mean)
   si1<-sqrt(apply(logitz1,2,var))
@@ -96,7 +92,7 @@ hybridCopulaREMADA.norm=function(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
   temp=(inipar1[c(1,2,4,5)]+inipar2[1:4])/2
   inipar=c(temp[1:2],inipar1[3],temp[3:4],inipar1[6],stau1[1,2],stau1[1,3],stau2)
   est=nlm(doublelik.norm,inipar,
-          TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgrid2,
+          TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,gl,mgrid1,mgrid2,
           qcondcop12,qcondcop13,tau2par12,tau2par13,
           qcond,tau2par,print.level=1,hessian=T) 
   est
@@ -104,7 +100,7 @@ hybridCopulaREMADA.norm=function(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
 
 
 
-hybridCopulaREMADA.beta=function(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
+hybridCopulaREMADA.beta=function(TP,FN,FP,TN,type,gl,mgrid1,mgrid2,
                     qcondcop12,qcondcop13,
                     tau2par12,tau2par13,qcond,tau2par)
 { TP1=TP[type==1]
@@ -144,7 +140,7 @@ hybridCopulaREMADA.beta=function(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
   temp=(inipar1[c(1,2,4,5)]+inipar2[1:4])/2
   inipar=c(temp[1:2],inipar1[3],temp[3:4],inipar1[6],stau1[1,2],stau1[1,3],stau2)
   est=nlm(doublelik.beta,inipar,
-        TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,perm,gl,mgrid1,mgrid2,
+        TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,gl,mgrid1,mgrid2,
         qcondcop12,qcondcop13,tau2par12,tau2par13,
         qcond,tau2par,print.level=2,hessian=T) 
   est

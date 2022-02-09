@@ -1,4 +1,6 @@
 export(CopulaREMADA.beta, CopulaREMADA.norm, 
+       FactorCopulaREMADA.beta, FactorCopulaREMADA.norm,
+       rFactorCopulaREMADA.beta,rFactorCopulaREMADA.norm,
        hybridCopulaREMADA.beta, hybridCopulaREMADA.norm, 
        countermonotonicCopulaREMADA.beta, countermonotonicCopulaREMADA.norm, 
        rCopulaREMADA.norm, rCopulaREMADA.beta, SROC.beta, SROC.norm, SROC, 
@@ -30,4 +32,4 @@ importFrom("graphics", "contour", "legend", "lines", "plot", "points")
      "nlm", "pbeta", "pnorm", "qbeta", "qnorm", "rbinom",
      "rgamma", "rnorm", "runif", "sd", "uniroot", "var")
 
-
+importFrom("stats", "cov", "factanal")

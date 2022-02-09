@@ -63,13 +63,14 @@ a list containing 4-dimensional arrays.}
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K. (2018) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis accounting for non-evaluable subjects.  \emph{ArXiv e-prints}, arXiv:1812.05915. \url{https://arxiv.org/abs/1812.05915}.
+Nikoloulopoulos, A.K. (2020) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis in the presence of non-evaluable subjects.  \emph{Statistical Methods in Medical Research}, 29 (10), 2988--3005. \doi{10.1177/0962280220913898}.
 
 }
 \seealso{
 \code{\link{rmultinomVineCopulaREMADA}}
 }
 \examples{
+\donttest{
 nq=15
 gl=gauss.quad.prob(nq,"uniform")
 data(mgrid15)
@@ -77,12 +78,12 @@ data(mgrid15)
 data(MK2016)
 attach(MK2016)
 
-#out=tmultinomVineCopulaREMADA.beta(TP,FN,FP,TN,NEP,NEN,
-#gl,mgrid15,qcondcln180,pcondcln180,tau2par.cln180,
-#qcondcln90,pcondcln90,tau2par.cln90)
+out=tmultinomVineCopulaREMADA.beta(TP,FN,FP,TN,NEP,NEN,
+gl,mgrid15,qcondcln180,pcondcln180,tau2par.cln180,
+qcondcln90,pcondcln90,tau2par.cln90)
 
 detach(MK2016)
-}
+}}
 \keyword{maximum likelihood}
 \keyword{copula}
 \keyword{distribution}

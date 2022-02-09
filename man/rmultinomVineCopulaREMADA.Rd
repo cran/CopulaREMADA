@@ -8,7 +8,7 @@ Simulation from  multinomial quadrivariate (truncated) D-vine copula mixed model
 }
 
 \description{
-Simulation from  for multinomial quadrivariate (truncated) D-vine copula mixed models for diagnostic test accurracy studies accounting for non-evaluable outcomes
+Simulation from   multinomial quadrivariate (truncated) D-vine copula mixed models for diagnostic test accurracy studies accounting for non-evaluable outcomes
 }
 
 \usage{
@@ -33,7 +33,7 @@ rmultinomVineCopulaREMADA.beta(N,p,g,taus,qcond1,
 \item{tau2par2}{function for maping Kendall's tau at the (2,3) bivariate margin to copula parameter}
 }
 
-\value{Simuated data with 6 columns and \eqn{N} rows. \describe{
+\value{Simulated data with 6 columns and \eqn{N} rows. \describe{
     \item{TP}{the number of true positives}
 \item{FN}{the number of false negatives}
 \item{FP}{the number of false positives}
@@ -43,7 +43,7 @@ rmultinomVineCopulaREMADA.beta(N,p,g,taus,qcond1,
 }
 }
 \references{
-Nikoloulopoulos, A.K. (2018) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis accounting for non-evaluable subjects.  \emph{ArXiv e-prints}, arXiv:1812.05915. \url{https://arxiv.org/abs/1812.05915}.
+Nikoloulopoulos, A.K. (2020) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis in the presence of non-evaluable subjects.  \emph{Statistical Methods in Medical Research}, 29 (10), 2988--3005. \doi{10.1177/0962280220913898}.
 
 }
 \seealso{

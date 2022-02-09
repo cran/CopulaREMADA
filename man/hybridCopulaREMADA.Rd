@@ -17,10 +17,10 @@ are computed numerically and the Hessian matrix of the second
 order derivatives is updated in each iteration. The standard errors (SE) of the ML estimates can be also obtained via the gradients and the Hessian computed numerically during the maximization process. 
 }
 \usage{
-hybridCopulaREMADA.norm(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
+hybridCopulaREMADA.norm(TP,FN,FP,TN,type,gl,mgrid1,mgrid2,
                qcondcop12,qcondcop13,
                tau2par12,tau2par13,qcond,tau2par)
-hybridCopulaREMADA.beta(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
+hybridCopulaREMADA.beta(TP,FN,FP,TN,type,gl,mgrid1,mgrid2,
                qcondcop12,qcondcop13,
                tau2par12,tau2par13,qcond,tau2par) 
 }
@@ -31,17 +31,7 @@ hybridCopulaREMADA.beta(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
 \item{TN}{the number of true negatives}
 \item{type}{a scalar indicating the study type: 
 1: Cohort study;
-
 2: Case-control study.}
-\item{perm}{a scalar indicating the selected permutation of indices: 
-
-1: Pilot variable is the number of TP. The bivariate margins are 12, 13, 23|1; 
-
-2: Pilot variable is the number of TN. The bivariate margins are 23, 12, 13|2; 
-
-3: Pilot variable is the TP+FN. The bivariate margins are 13, 23, 12|3; 
-
-1:TP, 2:TN, 3:TP+FN}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid1}{
 a list containing three-dimensional arrays. For more details see \code{\link{meshgrid}}}
@@ -72,6 +62,7 @@ Nikoloulopoulos, A.K.  (2018) Hybrid copula mixed models for combining case-cont
 \code{\link{VineCopulaREMADA}}, \code{\link{CopulaREMADA}}
 }
 \examples{
+\donttest{
 # simulate the data from N=25 cohort studies
 N=25
 p=c(0.8,0.7,0.4)
@@ -99,13 +90,12 @@ gl=gauss.quad.prob(nq,"uniform")
 mgrid1<- meshgrid(gl$n,gl$n,gl$n,nargout=3)
 mgrid2<- meshgrid(gl$n,gl$n)
 
-perm=1
 qcond=qcondcln
 tau2par=tau2par.cln
-# est=hybridCopulaREMADA.beta(TP,FN,FP,TN,type,perm,gl,mgrid1,mgrid2,
-# qcondcop12,qcondcop13,tau2par12,tau2par13,qcond,tau2par)
+est=hybridCopulaREMADA.beta(TP,FN,FP,TN,type,gl,mgrid1,mgrid2,
+qcondcop12,qcondcop13,tau2par12,tau2par13,qcond,tau2par)
 
-}
+}}
 \keyword{maximum likelihood}
 \keyword{copula}
 \keyword{distribution}
