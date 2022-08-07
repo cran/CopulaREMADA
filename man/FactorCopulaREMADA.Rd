@@ -46,7 +46,7 @@ a list containing two matrices with the rows of the output matrix x are copies o
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K. (2020) An one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests.  \emph{ArXiv e-prints}. arXiv:2006.09278. \url{https://arxiv.org/abs/2006.09278}
+Nikoloulopoulos, A.K. (2022) An one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests. \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)},  185 (3), 1398--1423. \doi{10.1111/rssa.12838}.
 }
 
 \examples{

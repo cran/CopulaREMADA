@@ -3,7 +3,7 @@
 \docType{package}
 \title{Copula Mixed  Models for Multivariate Meta-Analysis of Diagnostic Test Accuracy Studies}
 \description{
- Fits copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2019, 2020a, 2020b, 2020c). 
+ Fits copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2019, 2020a, 2020b, 2022). 
 }
 \details{
 This package contains \R functions to implement: 
@@ -21,7 +21,7 @@ This package contains \R functions to implement:
 
 \item The multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis accounting for non-evaluable subjects (Nikoloulopoulos, 2020b). 
 
-\item The one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests (Nikoloulopoulos, 2020c). 
+\item The one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests (Nikoloulopoulos, 2022). 
 }
 
 
@@ -45,12 +45,8 @@ Nikoloulopoulos, A.K.  (2019) A D-vine copula mixed model for joint meta-analysi
 Nikoloulopoulos, A.K.  (2020a) An extended trivariate vine copula mixed model for meta-analysis of diagnostic studies in the presence of non-evaluable outcomes.  \emph{The International Journal of Biostatistics}, 16(2). \doi{10.1515/ijb-2019-0107}.
 
 
-Nikoloulopoulos, A.K. (2020b) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis in the presence of non-evaluable subjects.
-\emph{Statistical Methods in Medical Research},  29 (10), 2988--3005. \doi{10.1177/0962280220913898}. 
+Nikoloulopoulos, A.K. (2020b) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis in the presence of non-evaluable subjects. \emph{Statistical Methods in Medical Research},  29 (10), 2988--3005. \doi{10.1177/0962280220913898}. 
 
-Nikoloulopoulos, A.K. (2020c) An one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests. 
-\emph{ArXiv e-prints}, arXiv:2006.09278. \url{https://arxiv.org/abs/2006.09278}.
-
-
+Nikoloulopoulos, A.K. (2022) An one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests. \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)},  185 (3), 1398--1423. \doi{10.1111/rssa.12838}.
 }
 \keyword{package}

@@ -1,4 +1,4 @@
-b01612be49530c0d3afb2085e3e7b2fe *DESCRIPTION
+066e507f73b302dab9728c0d3234b080 *DESCRIPTION
 4a958b4d6a4d29a916be1185b41c053f *INDEX
 a89e4da7849527f827650f41f0e6cf72 *NAMESPACE
 cfb49dffe4e585527aeaadfa00e5f306 *R/1-factor.R
@@ -22,7 +22,7 @@ ddaf7b8ccb020cbc19f1b5d937b93d55 *R/rFactorCopula.R
 21ecfeb5349fd7d53b7144a7c3bdd141 *R/tMLest.R
 82db7e4365dac8a52a26de995eac30ce *R/tau2par.R
 e21dba01a75dc0273374dc153c63233b *R/vine-vuong.R
-bcab7787457af652868ce7db0c58a410 *build/partial.rdb
+1b023d778b4fe97dd5d504af4fbf4aae *build/partial.rdb
 656ff1dd5a32d51c7744b35061e63155 *data/CT.rda
 4ea442240e8fd5dbb2b2bb12ef5b31a4 *data/LAG.rda
 7c3127c4e9dc6017f441430fdd7422ed *data/MK2016.rda
@@ -36,9 +36,9 @@ a629a72f37f736878d9a10d63e29b81b *data/mgrid30.rda
 62d18fcdd4470611ff893d72cb4d5b49 *data/mgrid50.rda
 e734eb608635c0038fa73df9acadd9bb *data/telomerase.rda
 df34d23d5aa499366b7944abf9101fe7 *man/CT.Rd
-96920487112e5f7442dae8f86ac922ef *man/CopulaREMADA-package.Rd
+c7da36dd45299eadc778547109582a08 *man/CopulaREMADA-package.Rd
 8343f299e1673de4c47b885688f3aced *man/CopulaREMADA.Rd
-8045d78a8103f49ab047375bd7ff1f79 *man/FactorCopulaREMADA.Rd
+34e771cc23b95b94a1777fb53eb0c967 *man/FactorCopulaREMADA.Rd
 851761d68373b07db151f59fd396ea5f *man/LAG.Rd
 09f1b6a35ff31481ed6e8e754a5c0a4c *man/MK2016.Rd
 2e59b1054008056ee48bd327976cc632 *man/MRI.Rd
@@ -59,7 +59,7 @@ c3f9ce87095a7fcb670311b15535574a *man/dcop.Rd
 8304ed3cddb1c683104f8d0889f0ac8f *man/qcondcop.Rd
 a5db1409e1b99914d0d9d99450257e48 *man/quadVineCopulaREMADA.Rd
 3dfa5a9062b57d1b7389b57791298253 *man/rCopulaREMADA.Rd
-011b204abd0ea4dc8bfdcb8432f16818 *man/rFactorCopulaREMADA.Rd
+c1d2ce75feb8d7406715df2e14b33d47 *man/rFactorCopulaREMADA.Rd
 0168f8e1d3e8af2e738c5a18128ee185 *man/rVineCopulaREMADA.Rd
 262b45041a368189e569fecace9b4f84 *man/rcop.Rd
 8a5b2946796e4a7397cfaea844f1334b *man/rmultinomVineCopulaREMADA.Rd
