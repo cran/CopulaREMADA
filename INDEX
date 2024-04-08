@@ -11,7 +11,11 @@ multinomVineCopulaREMADA.beta multinomial VineCopulaREMADA with beta margins
 multinomVineCopulaREMADA.norm multinomial VineCopulaREMADA with normal margins
 tmultinomVineCopulaREMADA.beta multinomial truncated VineCopulaREMADA with beta margins
 tmultinomVineCopulaREMADA.norm multinomial truncated VineCopulaREMADA with normal margins
+multinom6dVineCopulaREMADA.norm multinomial six-variate VineCopulaREMADA with normal margins
+multinom6dVineCopulaREMADA.beta multinomial six-variate VineCopulaREMADA with beta margins
 rmultinomVineCopulaREMADA.norm simulated multinomial truncated VineCopulaREMADA with normal margins
+rmultinom6dVineCopulaREMADA.norm simulated multinomial six-variate VineCopulaREMADA with normal margins
+rmultinom6dVineCopulaREMADA.beta simulated multinomial six-variate VineCopulaREMADA with beta margins
 rFactorCopulaREMADA.beta simulated 1-factor CopulaREMADA with beta margins
 rFactorCopulaREMADA.norm simulated 1-factor CopulaREMADA with normal margins
 rmultinomVineCopulaREMADA.beta simulated multinomial truncated VineCopulaREMADA with beta margins

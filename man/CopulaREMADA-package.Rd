@@ -3,7 +3,7 @@
 \docType{package}
 \title{Copula Mixed  Models for Multivariate Meta-Analysis of Diagnostic Test Accuracy Studies}
 \description{
- Fits copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2019, 2020a, 2020b, 2022). 
+ Fits copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2019, 2020a, 2020b, 2022, 2024). 
 }
 \details{
 This package contains \R functions to implement: 
@@ -22,6 +22,8 @@ This package contains \R functions to implement:
 \item The multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis accounting for non-evaluable subjects (Nikoloulopoulos, 2020b). 
 
 \item The one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests (Nikoloulopoulos, 2022). 
+
+\item The multinomial six-variate D-vine copula mixed model for for meta-analysis of two diagnostic tests accounting for within and between studies dependence (Nikoloulopoulos, 2024). 
 }
 
 
@@ -48,5 +50,7 @@ Nikoloulopoulos, A.K.  (2020a) An extended trivariate vine copula mixed model fo
 Nikoloulopoulos, A.K. (2020b) A multinomial quadrivariate D-vine copula mixed model for diagnostic studies meta-analysis in the presence of non-evaluable subjects. \emph{Statistical Methods in Medical Research},  29 (10), 2988--3005. \doi{10.1177/0962280220913898}. 
 
 Nikoloulopoulos, A.K. (2022) An one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests. \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)},  185 (3), 1398--1423. \doi{10.1111/rssa.12838}.
+
+Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Submitted.
 }
 \keyword{package}

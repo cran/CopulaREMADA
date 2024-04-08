@@ -14,7 +14,7 @@ For  copula mixed models for diagnostic test accuracy studies numerical evaluati
 
 
 1. Calculate Gauss-Legendre  quadrature points 
-{gl$nodes} and weights {gl$weights}.
+\code{gl$nodes} and weights \code{gl$weights}.
 
 2. Convert from independent uniform quadrature points  to dependent uniform quadrature points  that have distribution 'cop'.
 The inverse of the conditional distribution \code{qcondcop} corresponding to the copula 'cop' is used  to achieve this.
