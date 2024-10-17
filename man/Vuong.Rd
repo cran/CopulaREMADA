@@ -28,7 +28,7 @@ countermonotonicity.vuong(param1,param2,TP,FN,FP,TN,gl,mgrid)
 \item{TN}{the number of true negatives}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
-a list containing two matrices with the rows of the output matrix X are copies of the vector \code{gl$nodes}; columns of the output matrix Y are copies of the vector \code{gl$nodes}. For more details see \code{\link{meshgrid}}}
+a list containing two matrices with the rows of the output matrix X are copies of the vector \code{gl$nodes}; columns of the output matrix Y are copies of the vector \code{gl$nodes}}
 }
 \value{A list containing the following components:
 

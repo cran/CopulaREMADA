@@ -40,8 +40,7 @@ quadVineCopulaREMADA.norm.beta(TP1,FN1,FP1,TN1,TP2,FN2,FP2,TN2,
 \item{TN2}{the number of true negatives for test 2}
 
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
-\item{mgrid}{
-a list containing 4-dimensional arrays.}
+\item{mgrid}{a list containing four-dimensional arrays.  Replicates of the quadrature points  that produce a 4-dimensional full grid}
 \item{qcond1}{function for the inverse conditional copula cdf at the (1,2) bivariate margin}
 \item{pcond1}{function for the conditional copula cdf at the (1,2) bivariate margin}
 \item{tau2par1}{function for maping Kendall's tau at the (1,2) bivariate margin to copula parameter}

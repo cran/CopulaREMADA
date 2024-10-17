@@ -37,7 +37,7 @@ multinom6dVineCopulaREMADA.beta(y001,y011,y101,y111,y000,y010,y100,y110,
 \item{y110}{the number of the test results in the non-diseased where the test 1 outcome is positive and  the test 2 outcome is positive}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
-a list containing 6-dimensional arrays.}
+a list containing six-dimensional arrays.  Replicates of the quadrature points  that produce a 6-dimensional full grid}
 \item{qcond1}{function for the inverse conditional copula cdf at the (1,2) bivariate margin}
 \item{qcond2}{function for the inverse conditional copula cdf at the (2,3) bivariate margin}
 \item{qcond3}{function for the inverse conditional copula cdf at the (3,4) bivariate margin}
@@ -64,7 +64,7 @@ a list containing 6-dimensional arrays.}
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Submitted.
+Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Statistical Methods in Medical Research. \doi{10.1177/09622802241269645}
 
 }
 \seealso{

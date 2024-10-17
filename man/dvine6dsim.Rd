@@ -32,7 +32,7 @@ Joe H (2014) \emph{Dependence Modeling with Copulas}. Chapman & Hall/CRC.
 
 Joe H (2014) \emph{CopulaModel:  Dependence Modeling with Copulas}. Software for book: \emph{Dependence Modeling with Copulas}, Chapman & Hall/CRC, 2014.
 
-Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Submitted.
+Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Statistical Methods in Medical Research. \doi{10.1177/09622802241269645}
 
 }
 \seealso{

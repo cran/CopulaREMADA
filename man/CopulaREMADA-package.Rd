@@ -3,7 +3,7 @@
 \docType{package}
 \title{Copula Mixed  Models for Multivariate Meta-Analysis of Diagnostic Test Accuracy Studies}
 \description{
- Fits copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2019, 2020a, 2020b, 2022, 2024). 
+ Fits copula mixed models for multivariate meta-analysis of diagnostic test accuracy studies proposed in Nikoloulopoulos (2015, 2017, 2018a, 2018b, 2019, 2020a, 2020b, 2022, 2024a, 2024b). 
 }
 \details{
 This package contains \R functions to implement: 
@@ -23,7 +23,11 @@ This package contains \R functions to implement:
 
 \item The one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests (Nikoloulopoulos, 2022). 
 
-\item The multinomial six-variate D-vine copula mixed model for for meta-analysis of two diagnostic tests accounting for within and between studies dependence (Nikoloulopoulos, 2024). 
+\item The multinomial six-variate D-vine copula mixed model for for meta-analysis of two diagnostic tests accounting for within and between studies dependence (Nikoloulopoulos, 2024a). 
+
+\item The 1-truncated D-vine copula mixed model for for meta-analysis of diagnostic test accuracy studies without a gold standard (Nikoloulopoulos, 2024b). 
+
+
 }
 
 
@@ -51,6 +55,8 @@ Nikoloulopoulos, A.K. (2020b) A multinomial quadrivariate D-vine copula mixed mo
 
 Nikoloulopoulos, A.K. (2022) An one-factor copula mixed model for joint meta-analysis of multiple diagnostic tests. \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)},  185 (3), 1398--1423. \doi{10.1111/rssa.12838}.
 
-Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Submitted.
+Nikoloulopoulos, A.K. (2024a) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Statistical Methods in Medical Research. \doi{10.1177/09622802241269645}.
+
+Nikoloulopoulos, A.K. (2024b) Vine copula mixed models for meta-analysis of   diagnostic  accuracy studies without a gold standard. Submitted. 
 }
 \keyword{package}

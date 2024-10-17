@@ -28,7 +28,7 @@ FactorCopulaREMADA.beta(TP,FN,FP,TN,gl,mgrid,qcond1,tau2par1,qcond2,tau2par2)
 \item{TN}{an \eqn{n\times T} matrix where \eqn{n} is the number of studies. Column \eqn{j} has the number of true negatives Column \eqn{j} has  the number of true positives for test \eqn{j} for \eqn{j=1\ldots T}}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
-a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}. For more details see also \code{\link{meshgrid}}}
+a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}}
 \item{qcond1}{function for the inverse conditional copula cdfs that link the factor with the latent sensitivities}
 \item{tau2par1}{function for maping Kendall's tau  to copula parameter at the copulas that link the factor with the latent sensitivities}
 \item{qcond2}{function for the inverse conditional copula cdfs that link the factor with the latent specificities}

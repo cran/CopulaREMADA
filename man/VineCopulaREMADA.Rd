@@ -42,8 +42,7 @@ tVineCopulaREMADA.beta(TP,FN,FP,TN,gl,mgrid,
 \item{FP}{the number of false positives}
 \item{TN}{the number of true negatives}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
-\item{mgrid}{
-a list containing three-dimensional arrays. For more details see \code{\link{meshgrid}}}
+\item{mgrid}{a list containing three-dimensional arrays.  Replicates of the quadrature points  that produce a 3-dimensional full grid}
 \item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin}
 \item{qcondcop13}{function for the inverse of conditional copula cdf at the (1,3) bivariate margin}
 \item{qcondcop23}{function for the inverse of conditional copula cdf at the (2,3|1) bivariate margin}

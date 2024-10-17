@@ -34,9 +34,9 @@ hybridCopulaREMADA.beta(TP,FN,FP,TN,type,gl,mgrid1,mgrid2,
 2: Case-control study.}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid1}{
-a list containing three-dimensional arrays. For more details see \code{\link{meshgrid}}}
+a list containing three-dimensional arrays}
 \item{mgrid2}{
-a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}. For more details see also \code{\link{meshgrid}}}
+a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}}
 \item{qcondcop12}{function for the inverse of conditional copula cdf at the (1,2) bivariate margin of the vine}
 \item{qcondcop13}{function for the inverse of conditional copula cdf at the (1,3) bivariate margin of the vine}
 \item{tau2par12}{function for maping Kendall's tau at the (1,2) bivariate margin of the vine to copula parameter}

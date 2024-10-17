@@ -6,7 +6,7 @@
 \docType{data}
 \title{A list containing four-dimensional arrays}
 
-\description{A list containing four-dimensional arrays.  Replicates of the quadrature points  that produce an 4-dimensional full grid.}
+\description{A list containing four-dimensional arrays.  Replicates of the quadrature points  that produce a 4-dimensional full grid.}
 
 
 \examples{

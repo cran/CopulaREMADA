@@ -24,7 +24,19 @@ export(dbvn, dfrk, dcln, dcln90, dcln180, dcln270,
   pcondbvn, pcondfrk, pcondcln, pcondcln90, pcondcln180, pcondcln270,
   rfrk, rcln, rcln90, rcln180, rcln270,
   tau2par.bvn, tau2par.frk, tau2par.cln, tau2par.cln90, tau2par.cln180,
-  tau2par.cln270, cvinesim,dvinesim,dtrvinesim,dvine6dsim)
+  tau2par.cln270, cvinesim,dvinesim,dtrvinesim,dvine6dsim,
+ imperfectREMADA.norm,imperfectREMADA.beta,
+ imperfectCopulaREMADA.norm,imperfectCopulaREMADA.beta,
+ imperfect.trivariateVineCopulaREMADA.norm.comprehensive,
+ imperfect.trivariateVineCopulaREMADA.beta.comprehensive,
+ imperfect.trivariateVineCopulaREMADA.norm,
+ imperfect.trivariateVineCopulaREMADA.beta,
+ imperfect.quadrivariateVineCopulaREMADA.norm.comprehensive,
+ imperfect.quadrivariateVineCopulaREMADA.beta.comprehensive,
+ imperfect.fivevariateVineCopulaREMADA.norm.comprehensive,
+ imperfect.fivevariateVineCopulaREMADA.beta.comprehensive,
+ rimperfect.trivariateVineCopulaREMADA.norm,
+ rimperfect.trivariateVineCopulaREMADA.beta)
 import(statmod)
 import(matlab)
 import(tensor)

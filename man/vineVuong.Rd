@@ -44,7 +44,7 @@ tau2par12,tau2par13,param1,param2,TP,FN,FP,TN,gl,mgrid,NEP,NEN)
 \item{TN}{the number of true negatives}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
-a list containing three-dimensional arrays. For more details see \code{\link{meshgrid}}}
+a list containing three-dimensional arrays}
 \item{NEP}{the number of non-evaluable positives in the presence of non-evaluable subjects}
 \item{NEN}{the number of non-evaluable negatives in the presence of non-evaluable subjects}
 }

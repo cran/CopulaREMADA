@@ -41,7 +41,7 @@ countermonotonicCopulaREMADA.beta(TP,FN,FP,TN,gl,mgrid)
 \item{TN}{the number of true negatives}
 \item{gl}{a list containing the components of Gauss-Legendre nodes \code{gl$nodes} and weights \code{gl$weights}}
 \item{mgrid}{
-a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}. For more details see also \code{\link{meshgrid}}}
+a list containing two matrices with the rows of the output matrix x are copies of the vector \code{gl$nodes}; columns of the output matrix y are copies of the vector \code{gl$nodes}}
 \item{qcond}{function for the inverse of conditional copula cdf}
 \item{tau2par}{function for maping Kendall's tau to copula parameter}
 }

@@ -35,7 +35,7 @@ rmultinom6dVineCopulaREMADA.beta(N,p,g,taus,qcond,tau2par)}
 }
 }
 \references{
-Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Submitted.
+Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Statistical Methods in Medical Research. \doi{10.1177/09622802241269645}
 }
 \seealso{
 \code{\link{dvine6dsim}}}
