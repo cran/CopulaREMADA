@@ -64,7 +64,7 @@ a list containing six-dimensional arrays.  Replicates of the quadrature points  
 For more details see  \code{\link{nlm}}
 }
 \references{
-Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. Statistical Methods in Medical Research. \doi{10.1177/09622802241269645}
+Nikoloulopoulos, A.K. (2024) Joint meta-analysis  of two diagnostic tests accounting for within and between studies dependence. \emph{Statistical Methods in Medical Research}, \bold{33}(10), 1800--1817. \doi{10.1177/09622802241269645}.
 
 }
 \seealso{

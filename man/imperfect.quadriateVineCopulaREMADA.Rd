@@ -44,7 +44,7 @@ a list containing four-dimensional arrays.  Replicates of the quadrature points 
 \item{SE}{the standard errors}
 }
 \references{
-Nikoloulopoulos, A.K. (2024) Vine copula mixed models for meta-analysis of diagnostic accuracy studies without a gold standard. Submitted.
+Nikoloulopoulos, A.K. (2025) Vine copula mixed models for meta-analysis of diagnostic accuracy studies without a gold standard. \emph{Biometrics}, \bold{81}(2), ujaf037. \doi{10.1093/biomtc/ujaf037}.
 }
 
 \examples{

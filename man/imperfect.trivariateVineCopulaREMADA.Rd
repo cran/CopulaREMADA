@@ -56,7 +56,7 @@ y10,y01,y00,gl,mgrid,qcond1,tau2par1,qcond2,tau2par2,select.random,start)
 \item{SE}{the standard errors}
 }
 \references{
-Nikoloulopoulos, A.K. (2024) Vine copula mixed models for meta-analysis of diagnostic accuracy studies without a gold standard. Submitted.
+Nikoloulopoulos, A.K. (2025) Vine copula mixed models for meta-analysis of diagnostic accuracy studies without a gold standard. \emph{Biometrics}, \bold{81}(2), ujaf037. \doi{10.1093/biomtc/ujaf037}.
 }
 
 \examples{
